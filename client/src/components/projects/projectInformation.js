@@ -1,14 +1,11 @@
 import React from "react";
 
 const ProjectInformation = (props) => {
-	console.log(props);
-
-	let url = props.selected.url;
 	return (
 		<div className="ProjectInformation">
 			<img
 				id={props.selected.index}
-				src={"./images/" + props.selected.url}
+				src={"./images/projects/" + props.selected.url}
 				alt={props.selected.name}
 			></img>
 			<div className="projectBody">

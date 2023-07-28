@@ -24,9 +24,9 @@ var config = {
 		filename: "my-website.js",
 	},
 	plugins: [
-		new DotenvWebpackPlugin({
-			path: "./.env.local",
-		}),
+		// new DotenvWebpackPlugin({
+		// 	path: "./.env.local",
+		// }),
 	],
 	optimization: {
 		minimizer: [

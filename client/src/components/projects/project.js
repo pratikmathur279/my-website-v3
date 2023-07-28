@@ -13,7 +13,7 @@ const Project = (props) => {
 					<img
 						className="project-thumb"
 						id={props.id}
-						src={"./images/" + props.src}
+						src={"./images/projects/" + props.src}
 						alt={props.alt}
 					></img>
 				</div>

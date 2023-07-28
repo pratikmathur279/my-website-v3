@@ -60,9 +60,9 @@ var config = {
 			threshold: 10240,
 			minRatio: 0.1,
 		}),
-		new DotenvWebpackPlugin({
-			path: "./.env.production",
-		}),
+		// new DotenvWebpackPlugin({
+		// 	path: "./.env.production",
+		// }),
 	],
 
 	module: {

@@ -89,7 +89,7 @@ const BlogPage = (props) => {
 					<h3>My Insights</h3>
 				</div>
 
-				<div className="home-mouse">
+				<div className="hero-mouse">
 					<div className="mouse"></div>
 				</div>
 			</div>

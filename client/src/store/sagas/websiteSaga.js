@@ -35,13 +35,11 @@ function* onGetExperience() {
 	try {
 		const response = yield axios.get("/api/experiences");
 		var data = response.data;
-		console.log(data);
 
 		for (var i in data) {
 			var temp = data[i].responsibilities;
 			temp = temp.split(";");
 			data[i].responsibilities = temp;
-			// console.log(data.length);
 			if (i == data.length - 1) {
 				data.sort((a, b) => (a.index > b.index ? 1 : -1));
 			}

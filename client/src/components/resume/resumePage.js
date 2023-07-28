@@ -12,8 +12,6 @@ const ResumePage = (props) => {
 		(state) => state.GlobalReducer
 	);
 
-	console.log(experience);
-
 	useEffect(() => {
 		dispatch(getExperience());
 		dispatch(getTechnology());
@@ -38,7 +36,7 @@ const ResumePage = (props) => {
 					</div>
 				</div>
 
-				<div className="home-mouse">
+				<div className="hero-mouse">
 					<div className="mouse"></div>
 				</div>
 			</div>

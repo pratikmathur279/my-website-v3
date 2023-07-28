@@ -94,7 +94,7 @@ const Homepage = (props) => {
 			<div className="descriptionContainer">
 				<div className="descriptionWrapper">
 					<div className="descriptionImage">
-						<img alt="Web Dev" src="/images/Web-Dev.jpg" />
+						<img alt="Web Dev" src="/images/backgrounds/Web-Dev.jpg" />
 					</div>
 
 					<div className="description">

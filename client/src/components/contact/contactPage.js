@@ -13,7 +13,7 @@ const ContactPage = (props) => {
 					<h3>Connect with me today.</h3>
 				</div>
 
-				<div className="home-mouse">
+				<div className="hero-mouse">
 					<div className="mouse"></div>
 				</div>
 			</div>

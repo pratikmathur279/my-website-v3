@@ -4,7 +4,6 @@ import ReactIcons from "../common/reactIcons.js";
 
 const Hexagons = (props) => {
 	const buildList = (hex) => {
-		console.log(hex.name);
 		return (
 			<div key={hex.id} className="AlignHexagon">
 				<div className="Hexagon">

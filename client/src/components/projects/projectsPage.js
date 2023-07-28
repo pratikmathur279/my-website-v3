@@ -12,8 +12,6 @@ const ProjectsPage = (props) => {
 
 	const { projects } = useSelector((state) => state.GlobalReducer);
 
-	console.log(projects);
-
 	useEffect(() => {
 		dispatch(getProjects());
 	}, []);
@@ -24,8 +22,6 @@ const ProjectsPage = (props) => {
 
 			setShowProject((prev) => !prev);
 		} else {
-			console.log(id);
-
 			let project = _.find(projects, (p) => {
 				return p.id == id;
 			});
@@ -57,7 +53,7 @@ const ProjectsPage = (props) => {
 					<h3 className="ProjectsHeader">Projects</h3>
 				</div>
 
-				<div className="home-mouse">
+				<div className="hero-mouse">
 					<div className="mouse"></div>
 				</div>
 			</div>
