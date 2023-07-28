@@ -1,0 +1,374 @@
+.header-wrapper {
+    height: 100px;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    z-index: 90;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+
+    &.scrolled {
+        background-color: white;
+        box-shadow: 1px 1px #d3d3d3;
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+        &.scrolled {
+            // background-color: $lightnavy;
+        }
+    }
+
+    @media screen and (min-width: $tabletBreak) {
+        &.scrolled {
+            background-color: white;
+            box-shadow: 1px 1px #d3d3d3;
+            -webkit-transition: background-color 200ms linear;
+            -ms-transition: background-color 200ms linear;
+            transition: background-color 200ms linear;
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 1250px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+
+            .my-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-width: 100px;
+                max-height: 100%;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .btn {
+                margin: 0;
+            }
+        }
+
+        .contact-us {
+            .contact {
+                text-decoration: none;
+                display: flex;
+                gap: 5px;
+                align-items: center;
+
+                svg {
+                    width: 26px;
+                    height: 26px;
+                    // color: $darkblue;
+                }
+
+                span {
+                    // color: $darkblue;
+                    font-size: 1.45em;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+        padding: 12px 20px;
+
+        .wrapper {
+            .logo-wrapper {
+                .tms-logo {
+                    max-width: 185px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobileLargeBreak) {
+        padding: 12px 20px;
+
+        .wrapper {
+            .logo-wrapper {
+                .tms-logo {
+                    max-width: 165px;
+                }
+            }
+
+            .contact-us {
+                .contact {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .NavigationItems {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        flex-flow: row;
+        gap: 40px;
+
+        .NavigationItem {
+            margin: auto;
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            padding: 0;
+
+            .NavLink {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+                color: $darkblue;
+                text-decoration: none;
+                width: 100%;
+                box-sizing: border-box;
+                display: block;
+                font-size: 22px;
+                padding: 0;
+                margin: auto;
+                position: relative;
+
+                &::before {
+                    transition: 300ms;
+                    height: 3px;
+                    content: "";
+                    position: absolute;
+                    background-color: $lightorange;
+                    width: 0%;
+                    bottom: -3px;
+                }
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                &.active {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .DrawerToggle {
+        width: 40px;
+        height: fit-content;
+        align-items: center;
+        padding: 10px 0;
+        margin-left: 5px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        @media (min-width: $tabletBreak) {
+            display: none;
+        }
+    }
+
+    .Burger {
+        margin-top: 20px;
+        position: relative;
+        width: 40px;
+        height: 3px;
+        background: $darkblue;
+        transform-origin: center;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            content: '';
+            transform: rotate(0deg);
+            transition-duration: 0.15s;
+        }
+
+        &::before {
+            top: -12px;
+        }
+
+        &::after {
+            bottom: -12px;
+        }
+    }
+
+    .Burger.active {
+        background-color: transparent;
+    }
+
+    .Burger.active:before,
+    .Burger.active:after {
+        background-color: #5db65f;
+        top: 0;
+        transition-duration: 0.15s;
+    }
+
+    .Burger.active:before {
+        transform: rotate(45deg);
+    }
+
+    .Burger.active:after {
+        transform: rotate(-45deg);
+    }
+
+    @media (max-width: $tabletBreak) {
+        .DesktopOnly {
+            display: none;
+        }
+
+        .Toolbar {
+            height: 95px;
+            top: 0px;
+            position: absolute;
+            z-index: 99999;
+            background-color: $lightnavy;
+        }
+
+        .Logo {
+            display: block;
+            width: 95px;
+            margin-top: 0px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.Footer {
+    background-color: $darkblue;
+    position: relative;
+    padding: 35px 0;
+    margin-top: 0;
+    height: fit-content;
+    overflow: none;
+    text-align: center;
+    font-family: "Roboto";
+    align-items: center;
+
+    .FooterDiv {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+
+        p {
+            color: white;
+            font-family: 'Source Sans Pro';
+        }
+
+        .FooterContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            .footerImage {
+                margin-top: 20px;
+                padding: 0 20px;
+                justify-content: space-between;
+                text-align: center;
+                font-size: 30px;
+
+                img {
+                    width: 35px;
+                }
+            }
+        }
+    }
+}
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(90%, 850px);
+        display: block;
+        background-color: #fff;
+        height: fit-content;
+        padding: 40px;
+        box-sizing: border-box;
+        height: min(80vh, 600px);
+        border-radius: 20px;
+    }
+
+    @media screen and (max-width: $tabletBreak) {
+        .modal-content {
+            top: 100px;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+#close {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+
+    &::after {
+        position: absolute;
+        content: "\d7";
+        font-size: 35px;
+        color: black;
+        font-weight: bold;
+        top: 0;
+        left: 0;
+    }
+}

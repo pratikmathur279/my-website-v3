@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+.env.beta
+.env.production
+.sfdx
+
+
+server/logs
+server/.env
