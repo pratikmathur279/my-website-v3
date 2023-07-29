@@ -2,7 +2,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import webpack from "webpack";
 import CompressionPlugin from "compression-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,12 +16,11 @@ const GLOBALS = {
 
 var config = {
 	mode: "production",
-	devtool: "source-map",
+	devtool: "inline-source-map",
 	entry: APP_DIR + "/index.js",
 	output: {
 		path: BUILD_DIR,
 		filename: "my-website.js",
-		publicPath: "/",
 	},
 	stats: "errors-only",
 	optimization: {

@@ -3,13 +3,13 @@
 		"@babel/preset-env",
 		"@babel/preset-react"
 	],
-	// "plugins": [
-	// 	"@babel/transform-object-assign",
-	// 	[
-	// 		"@babel/plugin-transform-runtime",
-	// 		{
-	// 			"regenerator": true
-	// 		}
-	// 	]
-	// ]
+	"plugins": [
+		"@babel/transform-object-assign",
+		[
+			"@babel/plugin-transform-runtime",
+			{
+				"regenerator": true
+			}
+		]
+	]
 }
