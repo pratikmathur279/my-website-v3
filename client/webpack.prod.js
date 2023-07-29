@@ -17,7 +17,7 @@ const GLOBALS = {
 
 var config = {
 	mode: "production",
-	devtool: "nosources-source-map",
+	devtool: "source-map",
 	entry: APP_DIR + "/index.js",
 	output: {
 		path: BUILD_DIR,
