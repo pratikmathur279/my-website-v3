@@ -12,7 +12,7 @@ AWS.config.update({
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-const SKILLS_TABLE = "my-website-skills-data";
+const SKILLS_TABLE = "my-website-skills";
 
 // get projects
 router.get("/api/skills", async (req, res, next) => {
@@ -59,11 +59,11 @@ router.post("/api/add-skills", async (req, res, next) => {
 			// handle potential errors
 			if (error) {
 				console.error(error);
-			} else {
-				res.send("Added Item!");
 			}
 		});
 	});
+
+	res.send("Added Item!");
 });
 
 // add single project

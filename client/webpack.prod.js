@@ -2,7 +2,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 import webpack from "webpack";
 import CompressionPlugin from "compression-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,11 +18,11 @@ const GLOBALS = {
 
 var config = {
 	mode: "production",
-	devtool: "inline-source-map",
+	devtool: "nosources-source-map",
 	entry: APP_DIR + "/index.js",
 	output: {
 		path: BUILD_DIR,
-		filename: "my-website.js",
+		filename: "myapp.js",
 	},
 	stats: "errors-only",
 	optimization: {
@@ -58,9 +60,7 @@ var config = {
 			threshold: 10240,
 			minRatio: 0.1,
 		}),
-		// new DotenvWebpackPlugin({
-		// 	path: "./.env.production",
-		// }),
+		new CleanWebpackPlugin(),
 	],
 
 	module: {

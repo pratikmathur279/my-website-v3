@@ -33,8 +33,8 @@ gulp.task("imagemin", () => {
 
 gulp.task("connect", () => {
 	browserSync({
-		port: 9457,
-		proxy: "tmquickquotev2.test",
+		port: 3011,
+		proxy: "pratikmathur.test",
 	});
 });
 

@@ -10,7 +10,10 @@ AWS.config.update({
 	region: "us-east-1",
 });
 
-const TECHNOLOGY_TABLE = "my-website-technology-data";
+const TECHNOLOGY_TABLE = "my-website-technology";
+
+// fetch all projects from the database
+var docClient = new AWS.DynamoDB.DocumentClient();
 
 // get projects
 router.get("/api/technology", async (req, res, next) => {
@@ -36,7 +39,9 @@ router.get("/api/technology", async (req, res, next) => {
 
 // add multiple projects
 router.post("/api/add-technology", async (req, res, next) => {
-	const data = JSON.parse(req.body);
+	const data = req.body;
+	console.log(data);
+
 	const timestamp = new Date().getTime();
 
 	data.forEach((element) => {

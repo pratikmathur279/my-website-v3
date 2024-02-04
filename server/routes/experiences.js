@@ -10,7 +10,10 @@ AWS.config.update({
 	region: "us-east-1",
 });
 
-const EXPERIENCES_TABLE = "my-website-experiences-data";
+const EXPERIENCES_TABLE = "my-website-experiences";
+
+// fetch all projects from the database
+var docClient = new AWS.DynamoDB.DocumentClient();
 
 // get projects
 router.get("/api/experiences", async (req, res, next) => {
@@ -36,7 +39,7 @@ router.get("/api/experiences", async (req, res, next) => {
 
 // add multiple projects
 router.post("/api/add-experiences", async (req, res, next) => {
-	const data = JSON.parse(req.body);
+	const data = req.body;
 	const timestamp = new Date().getTime();
 
 	data.forEach((element) => {

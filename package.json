@@ -11,9 +11,9 @@
 		"dev": "concurrently npm:dev:*",
 		"dev:js": "cd client && webpack --config=webpack.config.js",
 		"dev:scss": "cd client && gulp start",
-		"dev:server": "cd server && nodemon server.js",
+		"dev:server": "cd server && nodemon index.js",
 		"production": "cd client && webpack --config=webpack.prod.js",
-		"prod:server": "cd server && node server.js"
+		"prod:server": "cd server && node index.js"
 	},
 	"author": "Pratik Mathur",
 	"license": "ISC",
@@ -35,6 +35,7 @@
 		"bcryptjs": "^2.4.3",
 		"browser-sync": "^2.27.7",
 		"browserify": "^17.0.0",
+		"clean-webpack-plugin": "^4.0.0",
 		"compression": "^1.7.4",
 		"compression-webpack-plugin": "^10.0.0",
 		"confetti-explosion-react": "^0.1.2",

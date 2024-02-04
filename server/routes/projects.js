@@ -37,7 +37,7 @@ router.get("/api/projects", async (req, res, next) => {
 
 // add multiple projects
 router.post("/api/add-projects", async (req, res, next) => {
-	const data = JSON.parse(req.body);
+	const data = req.body;
 	const timestamp = new Date().getTime();
 
 	data.forEach((element) => {

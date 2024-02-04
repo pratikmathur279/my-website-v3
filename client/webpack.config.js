@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import webpack from "webpack";
 import CompressionPlugin from "compression-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,13 +22,9 @@ var config = {
 	watch: true,
 	output: {
 		path: BUILD_DIR,
-		filename: "my-website.js",
+		filename: "myapp.js",
 	},
-	plugins: [
-		// new DotenvWebpackPlugin({
-		// 	path: "./.env.local",
-		// }),
-	],
+	plugins: [],
 	optimization: {
 		minimizer: [
 			new webpack.DefinePlugin(GLOBALS),
