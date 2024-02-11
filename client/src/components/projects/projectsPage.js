@@ -4,17 +4,48 @@ import { Link } from "react-router-dom";
 import { getProjects } from "../../actions/website";
 import Project from "./project";
 import ProjectInformation from "./projectInformation.js";
+import ProjectRow from "./projectRow";
 
 const ProjectsPage = (props) => {
 	const dispatch = useDispatch();
 	const [showProject, setShowProject] = useState(false);
-	const [selected, setSelected] = useState(null);
+	const [selected, setSelected] = useState({});
+
+	const [projectRows, setProjectRows] = useState([]);
 
 	const { projects } = useSelector((state) => state.GlobalReducer);
 
 	useEffect(() => {
 		dispatch(getProjects());
 	}, []);
+
+	useEffect(() => {
+		console.log(projects);
+
+		let split = [];
+		if (window.innerWidth < 900) {
+			split = createRows(projects, 1);
+		} else if (window.innerWidth > 900 && window.innerWidth < 1200) {
+			split = createRows(projects, 2);
+		} else {
+			split = createRows(projects, 3);
+		}
+
+		console.log(split);
+
+		setProjectRows(split);
+	}, [projects]);
+
+	function createRows(orignal, length) {
+		var arr = [];
+		var original = _.clone(orignal);
+
+		while (original.length > 0) {
+			var split = original.splice(0, length);
+			arr.push(split);
+		}
+		return arr;
+	}
 
 	function openModalHandler(id) {
 		if (showProject) {
@@ -34,14 +65,25 @@ const ProjectsPage = (props) => {
 		}
 	}
 
-	const buildRow = (card) => {
+	const selectProject = (project) => {
+		console.log(project);
+		if ("id" in selected) {
+			if (selected.id === project.id) {
+				setSelected({});
+				return;
+			}
+		}
+
+		setSelected(project);
+	};
+
+	const buildRow = (row, index) => {
 		return (
-			<Project
-				card={card}
-				key={card.id}
-				src={card.url}
-				id={card.id}
-				toggleModal={openModalHandler}
+			<ProjectRow
+				projects={row}
+				key={index}
+				selected={selected}
+				selectProject={selectProject}
 			/>
 		);
 	};
@@ -58,27 +100,7 @@ const ProjectsPage = (props) => {
 				</div>
 			</div>
 
-			{showProject && (
-				<div
-					className="Modal"
-					style={{
-						transform: showProject ? "translateY(0)" : "translateY(-100vh)",
-						opacity: showProject ? "1" : "0",
-					}}
-				>
-					<div className="modal-content">
-						<div
-							id="close"
-							onClick={() => {
-								openModalHandler();
-							}}
-						></div>
-						<ProjectInformation showProject={showProject} selected={selected} />
-					</div>
-				</div>
-			)}
-
-			<div className="ProjectRow">{projects.map(buildRow)}</div>
+			<div className="container">{projectRows.map(buildRow)}</div>
 		</div>
 	);
 };

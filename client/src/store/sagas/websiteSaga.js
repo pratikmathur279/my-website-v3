@@ -71,7 +71,7 @@ function* onGetProjects() {
 	try {
 		const response = yield axios.get("/api/projects");
 		var data = response.data;
-		data.sort((a, b) => (a.index > b.index ? 1 : -1));
+		data.sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1));
 
 		yield put(getProjectsSuccess(data));
 	} catch (error) {

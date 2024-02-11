@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-import LogRocket from "logrocket";
 
 import {
 	GoogleReCaptchaProvider,
@@ -18,40 +16,38 @@ import {
 } from "react-router-dom";
 
 // layouts
-import Header from "./components/layout/header.js";
-import Footer from "./components/layout/footer.js";
+const Header = lazy(() => import("./components/layout/header.js"));
+const Footer = lazy(() => import("./components/layout/footer.js"));
 
-import Homepage from "./components/homepage/homepage.js";
-import AboutPage from "./components/about/aboutPage.js";
-import BlogPage from "./components/blogs/blogPage.js";
-import ContactPage from "./components/contact/contactPage.js";
-import ResumePage from "./components/resume/resumePage.js";
-import ProjectsPage from "./components/projects/projectsPage.js";
-
-// import { SocketProvider } from "./store/context/socketContext.js";
+const Homepage = lazy(() => import("./components/homepage/homepage.js"));
+const AboutPage = lazy(() => import("./components/about/aboutPage.js"));
+const BlogPage = lazy(() => import("./components/blogs/blogPage.js"));
+const ContactPage = lazy(() => import("./components/contact/contactPage.js"));
+const ResumePage = lazy(() => import("./components/resume/resumePage.js"));
+const ProjectsPage = lazy(() =>
+	import("./components/projects/projectsPage.js")
+);
 
 const App = (props) => {
 	let dispatch = useDispatch();
 
 	return (
-		// <SocketProvider>
-
 		<div className="AppLayout-wrapper">
-			<Header />
-			{/* <ToastProvider /> */}
+			<Suspense>
+				<Header />
 
-			<Routes>
-				<Route path="/" element={<Homepage />} />
-				<Route path="/about" element={<AboutPage />} />
-				<Route path="/blog" element={<BlogPage />} />
-				<Route path="/projects" element={<ProjectsPage />} />
-				<Route path="/resume" element={<ResumePage />} />
-				<Route path="/contact" element={<ContactPage />} />
-			</Routes>
+				<Routes>
+					<Route path="/" element={<Homepage />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/blog" element={<BlogPage />} />
+					<Route path="/projects" element={<ProjectsPage />} />
+					<Route path="/resume" element={<ResumePage />} />
+					<Route path="/contact" element={<ContactPage />} />
+				</Routes>
 
-			<Footer />
+				<Footer />
+			</Suspense>
 		</div>
-		// </SocketProvider>
 	);
 };
 

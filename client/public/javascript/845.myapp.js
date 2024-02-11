@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[352],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[845],{
 
 /***/ 5932:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -181,7 +181,7 @@ var ReactIcons = function ReactIcons(_ref) {
 
 /***/ }),
 
-/***/ 7352:
+/***/ 845:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -189,124 +189,83 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ resumePage)
+  "default": () => (/* binding */ footer)
 });
 
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
-// EXTERNAL MODULE: ../node_modules/react-redux/es/index.js + 13 modules
-var es = __webpack_require__(1552);
-// EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
-var dist = __webpack_require__(2112);
 // EXTERNAL MODULE: ./src/components/common/reactIcons.js
 var reactIcons = __webpack_require__(56);
-// EXTERNAL MODULE: ./src/actions/website.js
-var website = __webpack_require__(2044);
-;// CONCATENATED MODULE: ./src/components/resume/experience.js
+;// CONCATENATED MODULE: ./src/components/layout/footerImage.js
 
-var Experience = function Experience(props) {
-  var client = props.data.client;
-  var buildRow = function buildRow(responsibility) {
-    return /*#__PURE__*/react.createElement("li", null, responsibility);
-  };
+
+var footerImage = function footerImage(props) {
   return /*#__PURE__*/react.createElement("div", {
-    className: "Experience"
-  }, /*#__PURE__*/react.createElement("h3", null, props.data.position), /*#__PURE__*/react.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react.createElement("h4", null, props.data.name, ",", " ", /*#__PURE__*/react.createElement("span", null, props.data.from, " - ", props.data.to))), client ? /*#__PURE__*/react.createElement("h4", null, "Client: ", client) : "", /*#__PURE__*/react.createElement("ul", {
-    className: "responsibilities"
-  }, props.data.responsibilities.map(buildRow)));
-};
-/* harmony default export */ const experience = (Experience);
-;// CONCATENATED MODULE: ./src/components/resume/workExperience.js
-
-
-var WorkExperience = function WorkExperience(props) {
-  var buildColumns = function buildColumns(col, i) {
-    var heading = i === 0 ? "Day-To-Day Comfort" : "Experience with";
-    return /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("h3", null, heading), col.map(buildTech));
-  };
-  var buildTech = function buildTech(tech) {
-    return /*#__PURE__*/react.createElement("li", null, tech.name);
-  };
-  var buildExperiences = function buildExperiences(exp) {
-    return /*#__PURE__*/react.createElement("div", {
-      key: exp.id,
-      className: "content"
-    }, /*#__PURE__*/react.createElement(experience, {
-      data: exp
-    }));
-  };
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("div", {
-    className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Technologies"), /*#__PURE__*/react.createElement("div", {
-    className: "content-row TechnologyRow"
-  }, props.technology.map(buildColumns))), /*#__PURE__*/react.createElement("div", {
-    className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Work Experience"), /*#__PURE__*/react.createElement("div", {
-    className: "content-row"
-  }, props.experience.map(buildExperiences))));
-};
-/* harmony default export */ const workExperience = (WorkExperience);
-;// CONCATENATED MODULE: ./src/components/resume/resumePage.js
-
-
-
-
-
-
-var ResumePage = function ResumePage(props) {
-  var dispatch = (0,es/* useDispatch */.OY)();
-  var _useSelector = (0,es/* useSelector */.w1)(function (state) {
-      return state.GlobalReducer;
-    }),
-    experience = _useSelector.experience,
-    technology = _useSelector.technology;
-  (0,react.useEffect)(function () {
-    dispatch((0,website/* getExperience */.Mb)());
-    dispatch((0,website/* getTechnology */.mo)());
-  }, []);
-  return /*#__PURE__*/react.createElement("div", {
-    className: "work-experience-wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "hero-wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "hero-container"
-  }, /*#__PURE__*/react.createElement("h3", null, "Dig a little deeper."), /*#__PURE__*/react.createElement("div", {
-    className: "download"
+    className: "footerImage"
   }, /*#__PURE__*/react.createElement("a", {
-    href: "https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf",
-    target: "_blank",
-    className: "button"
-  }, /*#__PURE__*/react.createElement("span", null, "Download Resume", " ", /*#__PURE__*/react.createElement(reactIcons/* default */.c, {
+    href: props.url,
+    target: props.target
+  }, /*#__PURE__*/react.createElement(reactIcons/* default */.c, {
     id: "CustomTag",
-    size: "24",
-    icon: "BsArrowRight"
-  }))))), /*#__PURE__*/react.createElement("div", {
-    className: "hero-mouse"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "mouse"
-  }))), /*#__PURE__*/react.createElement(workExperience, {
-    experience: experience
-    // loading={this.state.loading}
-    ,
-    technology: technology
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "latest-projects-wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Latest Work"), /*#__PURE__*/react.createElement("div", {
-    className: "content-row"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "latest-projects"
-  }, /*#__PURE__*/react.createElement("h3", null, "Interested to see what I\u2019ve been up to?"), /*#__PURE__*/react.createElement(dist/* Link */.cH, {
-    exact: true,
-    to: "/projects"
-  }, "View Projects"))))));
+    size: props.size,
+    color: props.color,
+    icon: props.icon,
+    background: "#fff"
+  })));
 };
-/* harmony default export */ const resumePage = (ResumePage);
+/* harmony default export */ const layout_footerImage = (footerImage);
+;// CONCATENATED MODULE: ./src/components/layout/footer.js
+
+
+var Footer = function Footer(props) {
+  var year = new Date().getFullYear();
+  return /*#__PURE__*/react.createElement("div", {
+    className: "Footer"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "FooterDiv"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "FooterContainer"
+  }, /*#__PURE__*/react.createElement(layout_footerImage, {
+    icon: "AiFillLinkedin",
+    size: "32",
+    color: "white",
+    alt: "LinkedIn",
+    url: "https://www.linkedin.com/in/pratik-mathur/",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(layout_footerImage, {
+    icon: "AiFillGithub",
+    size: "32",
+    color: "white",
+    alt: "Github",
+    url: "https://github.com/pratikmathur279",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(layout_footerImage, {
+    icon: "AiOutlineInstagram",
+    size: "32",
+    color: "white",
+    alt: "Instagram",
+    url: "https://www.instagram.com/pratikmathur279/",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(layout_footerImage, {
+    icon: "AiOutlineMail",
+    size: "32",
+    color: "white",
+    alt: "E-Mail",
+    url: "mailto:pratikmathur279@gmail.com"
+  }), /*#__PURE__*/react.createElement(layout_footerImage, {
+    icon: "FaWhatsapp",
+    size: "32",
+    color: "white",
+    alt: "E-Mail",
+    url: "https://wa.me/7039815938",
+    target: "_blank"
+  }))), /*#__PURE__*/react.createElement("div", {
+    className: "FooterDiv"
+  }, /*#__PURE__*/react.createElement("p", null, "\xA9", year, " Pratik Mathur. All rights reserved.")));
+};
+/* harmony default export */ const footer = (Footer);
 
 /***/ })
 
 }]);
-//# sourceMappingURL=352.myapp.js.map
+//# sourceMappingURL=845.myapp.js.map
