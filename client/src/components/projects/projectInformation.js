@@ -5,7 +5,10 @@ const ProjectInformation = (props) => {
 		<div className="ProjectInformation">
 			<img
 				id={props.selected.index}
-				src={"./images/projects/" + props.selected.url}
+				src={
+					".https://pratikmathur-website.s3.amazonaws.com/projects/" +
+					props.selected.url
+				}
 				alt={props.selected.name}
 			></img>
 			<div className="projectBody">

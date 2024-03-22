@@ -8,7 +8,10 @@ const Project = (props) => {
 
 			<div className="project-preview">
 				<img
-					src={"/images/projects/" + props.selected.file_name}
+					src={
+						"https://pratikmathur-website.s3.amazonaws.com/projects/" +
+						props.selected.file_name
+					}
 					alt={props.selected.name}
 				/>
 			</div>

@@ -104,7 +104,7 @@ var Project = function Project(props) {
   }, props.selected.description), /*#__PURE__*/react.createElement("div", {
     className: "project-preview"
   }, /*#__PURE__*/react.createElement("img", {
-    src: "/images/projects/" + props.selected.file_name,
+    src: "https://pratikmathur-website.s3.amazonaws.com/projects/" + props.selected.file_name,
     alt: props.selected.name
   })), props.selected.technologies && /*#__PURE__*/react.createElement("div", {
     className: "technology-wrapper"
@@ -136,7 +136,7 @@ var ProjectInformation = function ProjectInformation(props) {
     className: "ProjectInformation"
   }, /*#__PURE__*/React.createElement("img", {
     id: props.selected.index,
-    src: "./images/projects/" + props.selected.url,
+    src: ".https://pratikmathur-website.s3.amazonaws.com/projects/" + props.selected.url,
     alt: props.selected.name
   }), /*#__PURE__*/React.createElement("div", {
     className: "projectBody"
@@ -168,7 +168,7 @@ var ProjectRow = function ProjectRow(props) {
     }, project.title), /*#__PURE__*/react.createElement("div", {
       className: "preview-box"
     }, /*#__PURE__*/react.createElement("img", {
-      src: "/images/projects/" + project.file_name,
+      src: "https://pratikmathur-website.s3.amazonaws.com/projects/" + project.file_name,
       alt: project.name
     })));
   };

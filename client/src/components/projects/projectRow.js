@@ -17,7 +17,10 @@ const ProjectRow = (props) => {
 				<h3 className="project-name">{project.title}</h3>
 				<div className="preview-box">
 					<img
-						src={"/images/projects/" + project.file_name}
+						src={
+							"https://pratikmathur-website.s3.amazonaws.com/projects/" +
+							project.file_name
+						}
 						alt={project.name}
 					/>
 				</div>
