@@ -28821,7 +28821,7 @@ var react_router_dist = __webpack_require__(2060);
 
 // layouts
 var Header = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 68).then(__webpack_require__.bind(__webpack_require__, 3068));
+  return __webpack_require__.e(/* import() */ 699).then(__webpack_require__.bind(__webpack_require__, 5080));
 });
 var Footer = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 845).then(__webpack_require__.bind(__webpack_require__, 845));

@@ -130,6 +130,10 @@ html {
 				position: relative;
 			}
 
+			svg {
+				fill: $lightorange;
+			}
+
 			&:hover {
 				color: rgb(226, 43, 43) !important;
 			}
@@ -150,6 +154,10 @@ html {
 			&:hover {
 				span {
 					color: #fff;
+				}
+
+				svg {
+					fill: #fff;
 				}
 
 				&::before {

@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[68],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[699],{
 
 /***/ 5932:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -73,7 +73,7 @@ function _slicedToArray(arr, i) {
 
 /***/ }),
 
-/***/ 3068:
+/***/ 5080:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -125,7 +125,32 @@ var NavigationItems = function NavigationItems(props) {
   }, "Contact"));
 };
 /* harmony default export */ const navigationItems = (NavigationItems);
+;// CONCATENATED MODULE: ./src/components/layout/drawerToggle.js
+
+var DrawerToggle = function DrawerToggle(props) {
+  return /*#__PURE__*/react.createElement("div", {
+    className: "DrawerToggle"
+  }, /*#__PURE__*/react.createElement("div", {
+    id: "Burger",
+    className: "Burger",
+    onClick: props.clicked
+  }));
+};
+/* harmony default export */ const drawerToggle = (DrawerToggle);
+;// CONCATENATED MODULE: ./src/components/layout/sidebar.js
+
+
+var SideDrawer = function SideDrawer(props) {
+  return /*#__PURE__*/react.createElement("div", {
+    id: "modal"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "sidebar-wrapper"
+  }, /*#__PURE__*/react.createElement(navigationItems, null)));
+};
+/* harmony default export */ const sidebar = (SideDrawer);
 ;// CONCATENATED MODULE: ./src/components/layout/header.js
+
+
 
 
 
@@ -136,12 +161,21 @@ var Header = function Header(props) {
     _useState2 = (0,slicedToArray/* default */.c)(_useState, 2),
     navScrolled = _useState2[0],
     setNavScrolled = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = (0,slicedToArray/* default */.c)(_useState3, 2),
+    showSideDrawer = _useState4[0],
+    setShowSideDrawer = _useState4[1];
   (0,react.useEffect)(function () {
     window.addEventListener("scroll", function () {
       var scrolled = window.scrollY < 20 ? "" : "scrolled";
       setNavScrolled(scrolled);
     }, true);
   }, []);
+  var sideDrawerToggleHandler = function sideDrawerToggleHandler() {
+    setShowSideDrawer(function (prevState) {
+      return !prevState.showSideDrawer;
+    });
+  };
   return /*#__PURE__*/react.createElement("div", {
     className: "header-wrapper " + navScrolled
   }, /*#__PURE__*/react.createElement("div", {
@@ -156,11 +190,15 @@ var Header = function Header(props) {
     src: "/images/logos/pm_logo.png"
   }))), /*#__PURE__*/react.createElement("nav", {
     className: "DesktopOnly"
-  }, /*#__PURE__*/react.createElement(navigationItems, null))));
+  }, /*#__PURE__*/react.createElement(navigationItems, null)), showSideDrawer && /*#__PURE__*/react.createElement(sidebar, {
+    closed: sideDrawerToggleHandler
+  }), /*#__PURE__*/react.createElement(drawerToggle, {
+    clicked: sideDrawerToggleHandler
+  })));
 };
 /* harmony default export */ const header = (Header);
 
 /***/ })
 
 }]);
-//# sourceMappingURL=68.myapp.js.map
+//# sourceMappingURL=699.myapp.js.map

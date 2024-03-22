@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import NavigationItems from "./navigationItems";
 
 import { FaPhoneAlt } from "react-icons/fa";
+import DrawerToggle from "./drawerToggle";
+import SideDrawer from "./sidebar";
 
 const Header = (props) => {
 	const [navScrolled, setNavScrolled] = useState("");
+	const [showSideDrawer, setShowSideDrawer] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener(
@@ -20,6 +23,10 @@ const Header = (props) => {
 		);
 	}, []);
 
+	const sideDrawerToggleHandler = () => {
+		setShowSideDrawer((prevState) => !prevState.showSideDrawer);
+	};
+
 	return (
 		<div className={"header-wrapper " + navScrolled}>
 			<div className="wrapper">
@@ -28,9 +35,14 @@ const Header = (props) => {
 						<img alt="Pratik Mathur Logo" src="/images/logos/pm_logo.png" />
 					</Link>
 				</div>
+
 				<nav className="DesktopOnly">
 					<NavigationItems />
 				</nav>
+
+				{showSideDrawer && <SideDrawer closed={sideDrawerToggleHandler} />}
+
+				<DrawerToggle clicked={sideDrawerToggleHandler} />
 			</div>
 		</div>
 	);
