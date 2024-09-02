@@ -21,31 +21,37 @@ export async function generateSitemap() {
 		// Mark the URL as visited
 		visitedUrls.add(currentUrl);
 
-		// Navigate to the current URL
-		await page.goto(currentUrl, { waitUntil: "networkidle2" });
-		console.log(`Scraping ${currentUrl}`);
+		try {
+			// Navigate to the current URL
+			await page.goto(currentUrl, { waitUntil: "networkidle2" });
+			console.log(`Scraping ${currentUrl}`);
 
-		// Extract all URLs on the current page
-		const urlsOnPage = await page.evaluate(() => {
-			const anchorElements = document.querySelectorAll("a");
-			const links = [];
+			// Extract all URLs on the current page
+			const urlsOnPage = await page.evaluate(() => {
+				const anchorElements = document.querySelectorAll("a");
+				const links = [];
 
-			anchorElements.forEach((anchor) => {
-				const href = anchor.href;
-				if (href && href.includes("pratikmathur.com")) {
-					const url = new URL(href);
-					links.push(url.origin + url.pathname);
-				}
+				anchorElements.forEach((anchor) => {
+					const href = anchor.href;
+					// Ensure the link is within the same domain
+					if (href && href.includes("pratikmathur.com")) {
+						const url = new URL(href);
+						links.push(url.origin + url.pathname);
+					}
+				});
+
+				return links;
 			});
 
-			return links;
-		});
-
-		// Add new URLs to the queue for further processing
-		for (const url of urlsOnPage) {
-			if (!visitedUrls.has(url) && !queue.includes(url)) {
-				queue.push(url);
+			// Add new URLs to the queue for further processing
+			for (const url of urlsOnPage) {
+				if (!visitedUrls.has(url) && !queue.includes(url)) {
+					queue.push(url);
+				}
 			}
+		} catch (error) {
+			// Handle errors such as navigation failures or timeouts
+			console.log(`Error scraping ${currentUrl}:`, error);
 		}
 	}
 
@@ -79,8 +85,8 @@ function generateSitemapXml(urls) {
 	fs.writeFileSync("../sitemap.xml", sitemapXml, "utf-8");
 }
 
-function formatCurrentDate(tiimestamp) {
-	const date = new Date(tiimestamp);
+function formatCurrentDate(timestamp) {
+	const date = new Date(timestamp);
 	const year = date.getFullYear();
 	const month = String(date.getMonth() + 1).padStart(2, "0");
 	const day = String(date.getDate()).padStart(2, "0");
