@@ -82,7 +82,7 @@ function generateSitemapXml(urls) {
 
 	const sitemapXml = `${xmlHeader}\n${urlsetOpen}\n${urlTags}\n${urlsetClose}`;
 
-	fs.writeFileSync("../sitemap.xml", sitemapXml, "utf-8");
+	fs.writeFileSync("../client/public/sitemap.xml", sitemapXml, "utf-8");
 }
 
 function formatCurrentDate(timestamp) {
