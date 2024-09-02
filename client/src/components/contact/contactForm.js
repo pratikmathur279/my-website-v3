@@ -16,17 +16,18 @@ const ContactForm = (props) => {
 	return (
 		<div className="ContactForm">
 			<div className="contact-left-container">
-				<h1>Let's talk.</h1>
+				<h2>Let's talk.</h2>
+
 				<h3>
 					Have a question or want to work together? Fill in the form below and
 					I'll get back to you as soon as possible.
 				</h3>
-				<h2 className="email">
-					<a href="mailto:pratikmathur279@gmail.com">
-						pratikmathur279@gmail.com
-					</a>
-				</h2>
-				<h2>Phone: 703-981-5938 </h2>
+
+				<a href="mailto:pratikmathur279@gmail.com" className="email">
+					pratikmathur279@gmail.com
+				</a>
+
+				<a href="tel:7039815938">703-981-5938</a>
 
 				<div className="map-container">
 					<iframe src="https://www.google.com/maps/d/embed?mid=1DQ1fZit-lxoXEQrhlvkOApGVm-0&hl=en&ehbc=2E312F"></iframe>

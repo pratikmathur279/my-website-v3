@@ -1,7 +1,7 @@
 import React from "react";
 import ReactIcons from "../common/reactIcons";
 
-const footerImage = (props) => {
+const FooterImage = (props) => {
 	return (
 		<div className="footerImage">
 			<a href={props.url} target={props.target}>
@@ -17,4 +17,4 @@ const footerImage = (props) => {
 	);
 };
 
-export default footerImage;
+export default FooterImage;

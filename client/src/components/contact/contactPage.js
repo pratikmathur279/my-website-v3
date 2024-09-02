@@ -18,14 +18,7 @@ const ContactPage = (props) => {
 				</div>
 			</div>
 
-			<ContactForm
-				formData={formData}
-				// emailSent={props.emailSent}
-				// errors={props.errors}
-				// formControls={props.formControls}
-				// onChange={props.onChange}
-				// onClick={props.onClick}
-			/>
+			<ContactForm formData={formData} />
 		</div>
 	);
 };

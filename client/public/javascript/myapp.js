@@ -26487,6 +26487,7 @@ var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
 /* harmony export */   E5: () => (/* binding */ Router),
 /* harmony export */   IT: () => (/* binding */ useLocation),
 /* harmony export */   Mh: () => (/* binding */ DataRouterContext),
+/* harmony export */   W4: () => (/* binding */ useParams),
 /* harmony export */   c5: () => (/* binding */ Routes),
 /* harmony export */   co: () => (/* binding */ useHref),
 /* harmony export */   i6: () => (/* binding */ useNavigate),
@@ -26494,7 +26495,7 @@ var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
 /* harmony export */   oT: () => (/* binding */ useResolvedPath),
 /* harmony export */   yo: () => (/* binding */ NavigationContext)
 /* harmony export */ });
-/* unused harmony exports Await, MemoryRouter, Navigate, Outlet, RouterProvider, UNSAFE_LocationContext, UNSAFE_RouteContext, UNSAFE_mapRouteProperties, UNSAFE_useRouteId, UNSAFE_useRoutesImpl, createMemoryRouter, createRoutesFromChildren, createRoutesFromElements, renderMatches, useActionData, useAsyncError, useAsyncValue, useBlocker, useInRouterContext, useLoaderData, useMatch, useMatches, useNavigation, useNavigationType, useOutlet, useOutletContext, useParams, useRevalidator, useRouteError, useRouteLoaderData, useRoutes */
+/* unused harmony exports Await, MemoryRouter, Navigate, Outlet, RouterProvider, UNSAFE_LocationContext, UNSAFE_RouteContext, UNSAFE_mapRouteProperties, UNSAFE_useRouteId, UNSAFE_useRoutesImpl, createMemoryRouter, createRoutesFromChildren, createRoutesFromElements, renderMatches, useActionData, useAsyncError, useAsyncValue, useBlocker, useInRouterContext, useLoaderData, useMatch, useMatches, useNavigation, useNavigationType, useOutlet, useOutletContext, useRevalidator, useRouteError, useRouteLoaderData, useRoutes */
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
 /* harmony import */ var _remix_run_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1520);
 /**
@@ -26759,7 +26760,7 @@ function useOutlet(context) {
 function useParams() {
   let {
     matches
-  } = React.useContext(RouteContext);
+  } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(RouteContext);
   let routeMatch = matches[matches.length - 1];
   return routeMatch ? routeMatch.params : {};
 }
@@ -28365,130 +28366,38 @@ try {
 
 /***/ }),
 
-/***/ 2584:
+/***/ 5760:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   If: () => (/* binding */ GET_PROJECTS),
-/* harmony export */   OU: () => (/* binding */ GET_SKILLS),
-/* harmony export */   WO: () => (/* binding */ GET_PROJECTS_SUCCESS),
-/* harmony export */   YH: () => (/* binding */ GET_TECHNOLOGY_SUCCESS),
-/* harmony export */   eM: () => (/* binding */ GET_TECHNOLOGY_FAIL),
-/* harmony export */   k9: () => (/* binding */ GET_EXPERIENCE),
-/* harmony export */   me: () => (/* binding */ GET_SKILLS_FAIL),
-/* harmony export */   oR: () => (/* binding */ GET_EXPERIENCE_SUCCESS),
-/* harmony export */   ot: () => (/* binding */ GET_PROJECTS_FAIL),
-/* harmony export */   u: () => (/* binding */ GET_EXPERIENCE_FAIL),
-/* harmony export */   um: () => (/* binding */ GET_TECHNOLOGY),
-/* harmony export */   wF: () => (/* binding */ GET_SKILLS_SUCCESS)
+/* harmony export */   c: () => (/* binding */ _arrayLikeToArray)
 /* harmony export */ });
-// SKILLS
-var GET_SKILLS = "GET_SKILLS";
-var GET_SKILLS_SUCCESS = "GET_SKILLS_SUCCESS";
-var GET_SKILLS_FAIL = "GET_SKILLS_FAIL";
-
-// SKILLS
-var GET_EXPERIENCE = "GET_EXPERIENCE";
-var GET_EXPERIENCE_SUCCESS = "GET_EXPERIENCE_SUCCESS";
-var GET_EXPERIENCE_FAIL = "GET_EXPERIENCE_FAIL";
-var GET_TECHNOLOGY = "GET_TECHNOLOGY";
-var GET_TECHNOLOGY_SUCCESS = "GET_TECHNOLOGY_SUCCESS";
-var GET_TECHNOLOGY_FAIL = "GET_TECHNOLOGY_FAIL";
-var GET_PROJECTS = "GET_PROJECTS";
-var GET_PROJECTS_SUCCESS = "GET_PROJECTS_SUCCESS";
-var GET_PROJECTS_FAIL = "GET_PROJECTS_FAIL";
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
 
 /***/ }),
 
-/***/ 2044:
+/***/ 8652:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   At: () => (/* binding */ getExperienceSuccess),
-/* harmony export */   Bw: () => (/* binding */ getSkills),
-/* harmony export */   KM: () => (/* binding */ getTechnologySuccess),
-/* harmony export */   Mb: () => (/* binding */ getExperience),
-/* harmony export */   OI: () => (/* binding */ getProjectsFail),
-/* harmony export */   UT: () => (/* binding */ getProjects),
-/* harmony export */   cl: () => (/* binding */ getSkillsFail),
-/* harmony export */   eA: () => (/* binding */ getSkillsSuccess),
-/* harmony export */   gX: () => (/* binding */ getProjectsSuccess),
-/* harmony export */   mo: () => (/* binding */ getTechnology),
-/* harmony export */   y2: () => (/* binding */ getExperienceFail),
-/* harmony export */   yq: () => (/* binding */ getTechnologyFail)
+/* harmony export */   c: () => (/* binding */ _unsupportedIterableToArray)
 /* harmony export */ });
-/* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2584);
+/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5760);
 
-var getExperience = function getExperience() {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_EXPERIENCE */ .k9
-  };
-};
-var getExperienceSuccess = function getExperienceSuccess(data) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_EXPERIENCE_SUCCESS */ .oR,
-    payload: data
-  };
-};
-var getExperienceFail = function getExperienceFail(error) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_EXPERIENCE_FAIL */ .u,
-    payload: error
-  };
-};
-var getTechnology = function getTechnology() {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_TECHNOLOGY */ .um
-  };
-};
-var getTechnologySuccess = function getTechnologySuccess(data) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_TECHNOLOGY_SUCCESS */ .YH,
-    payload: data
-  };
-};
-var getTechnologyFail = function getTechnologyFail(error) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_TECHNOLOGY_FAIL */ .eM,
-    payload: error
-  };
-};
-var getSkills = function getSkills() {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_SKILLS */ .OU
-  };
-};
-var getSkillsSuccess = function getSkillsSuccess(data) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_SKILLS_SUCCESS */ .wF,
-    payload: data
-  };
-};
-var getSkillsFail = function getSkillsFail(error) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_SKILLS_FAIL */ .me,
-    payload: error
-  };
-};
-var getProjects = function getProjects() {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_PROJECTS */ .If
-  };
-};
-var getProjectsSuccess = function getProjectsSuccess(data) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_PROJECTS_SUCCESS */ .WO,
-    payload: data
-  };
-};
-var getProjectsFail = function getProjectsFail(error) {
-  return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__/* .GET_PROJECTS_FAIL */ .ot,
-    payload: error
-  };
-};
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .c)(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .c)(o, minLen);
+}
 
 /***/ }),
 
@@ -28811,6 +28720,113 @@ var dist = __webpack_require__(2112);
 var react_google_recaptcha_v3_esm = __webpack_require__(1052);
 // EXTERNAL MODULE: ../node_modules/react-router/dist/index.js
 var react_router_dist = __webpack_require__(2060);
+;// CONCATENATED MODULE: ./src/components/404/404.js
+
+var NotFound = function NotFound(props) {
+  return /*#__PURE__*/react.createElement("div", {
+    "class": "not-found-wrapper"
+  }, /*#__PURE__*/react.createElement("div", {
+    "class": "content"
+  }, /*#__PURE__*/react.createElement("svg", {
+    stroke: "currentColor",
+    fill: "currentColor",
+    "stroke-width": "0",
+    version: "1.1",
+    viewBox: "0 0 16 16",
+    height: "1em",
+    width: "1em",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react.createElement("path", {
+    d: "M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zM8 1.5c3.59 0 6.5 2.91 6.5 6.5s-2.91 6.5-6.5 6.5-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5zM4 5c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM10 5c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM4.998 12.199l-1.286-0.772c0.874-1.454 2.467-2.427 4.288-2.427s3.413 0.973 4.288 2.427l-1.286 0.772c-0.612-1.018-1.727-1.699-3.002-1.699s-2.389 0.681-3.002 1.699z"
+  })), /*#__PURE__*/react.createElement("h1", null, "404"), /*#__PURE__*/react.createElement("h2", null, "Page Not Found"), /*#__PURE__*/react.createElement("h5", null, "The page you are looking for doesn't exist.")));
+};
+/* harmony default export */ const _404 = (NotFound);
+;// CONCATENATED MODULE: ./src/actions/actionTypes.js
+// SKILLS
+var GET_SKILLS = "GET_SKILLS";
+var GET_SKILLS_SUCCESS = "GET_SKILLS_SUCCESS";
+var GET_SKILLS_FAIL = "GET_SKILLS_FAIL";
+
+// SKILLS
+var GET_EXPERIENCE = "GET_EXPERIENCE";
+var GET_EXPERIENCE_SUCCESS = "GET_EXPERIENCE_SUCCESS";
+var GET_EXPERIENCE_FAIL = "GET_EXPERIENCE_FAIL";
+var GET_TECHNOLOGY = "GET_TECHNOLOGY";
+var GET_TECHNOLOGY_SUCCESS = "GET_TECHNOLOGY_SUCCESS";
+var GET_TECHNOLOGY_FAIL = "GET_TECHNOLOGY_FAIL";
+var GET_PROJECTS = "GET_PROJECTS";
+var GET_PROJECTS_SUCCESS = "GET_PROJECTS_SUCCESS";
+var GET_PROJECTS_FAIL = "GET_PROJECTS_FAIL";
+;// CONCATENATED MODULE: ./src/actions/website.js
+
+var getExperience = function getExperience() {
+  return {
+    type: GET_EXPERIENCE
+  };
+};
+var getExperienceSuccess = function getExperienceSuccess(data) {
+  return {
+    type: GET_EXPERIENCE_SUCCESS,
+    payload: data
+  };
+};
+var getExperienceFail = function getExperienceFail(error) {
+  return {
+    type: GET_EXPERIENCE_FAIL,
+    payload: error
+  };
+};
+var getTechnology = function getTechnology() {
+  return {
+    type: GET_TECHNOLOGY
+  };
+};
+var getTechnologySuccess = function getTechnologySuccess(data) {
+  return {
+    type: GET_TECHNOLOGY_SUCCESS,
+    payload: data
+  };
+};
+var getTechnologyFail = function getTechnologyFail(error) {
+  return {
+    type: GET_TECHNOLOGY_FAIL,
+    payload: error
+  };
+};
+var getSkills = function getSkills() {
+  return {
+    type: GET_SKILLS
+  };
+};
+var getSkillsSuccess = function getSkillsSuccess(data) {
+  return {
+    type: GET_SKILLS_SUCCESS,
+    payload: data
+  };
+};
+var getSkillsFail = function getSkillsFail(error) {
+  return {
+    type: GET_SKILLS_FAIL,
+    payload: error
+  };
+};
+var getProjects = function getProjects() {
+  return {
+    type: GET_PROJECTS
+  };
+};
+var getProjectsSuccess = function getProjectsSuccess(data) {
+  return {
+    type: GET_PROJECTS_SUCCESS,
+    payload: data
+  };
+};
+var getProjectsFail = function getProjectsFail(error) {
+  return {
+    type: GET_PROJECTS_FAIL,
+    payload: error
+  };
+};
 ;// CONCATENATED MODULE: ./src/App.js
 
 
@@ -28819,12 +28835,14 @@ var react_router_dist = __webpack_require__(2060);
 //REACT ROUTER V6
 
 
+
+
 // layouts
 var Header = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 699).then(__webpack_require__.bind(__webpack_require__, 5080));
 });
 var Footer = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 845).then(__webpack_require__.bind(__webpack_require__, 845));
+  return __webpack_require__.e(/* import() */ 472).then(__webpack_require__.bind(__webpack_require__, 9472));
 });
 var Homepage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 500).then(__webpack_require__.bind(__webpack_require__, 5500));
@@ -28844,8 +28862,17 @@ var ResumePage = /*#__PURE__*/(0,react.lazy)(function () {
 var ProjectsPage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 208).then(__webpack_require__.bind(__webpack_require__, 1208));
 });
+var ProjectDetails = /*#__PURE__*/(0,react.lazy)(function () {
+  return Promise.all(/* import() */[__webpack_require__.e(405), __webpack_require__.e(860)]).then(__webpack_require__.bind(__webpack_require__, 7240));
+});
 var App = function App(props) {
   var dispatch = (0,es/* useDispatch */.OY)();
+  (0,react.useEffect)(function () {
+    dispatch(getProjects());
+    dispatch(getSkills());
+    dispatch(getExperience());
+    dispatch(getTechnology());
+  }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: "AppLayout-wrapper"
   }, /*#__PURE__*/react.createElement(react.Suspense, null, /*#__PURE__*/react.createElement(Header, null), /*#__PURE__*/react.createElement(react_router_dist/* Routes */.c5, null, /*#__PURE__*/react.createElement(react_router_dist/* Route */.kX, {
@@ -28861,11 +28888,17 @@ var App = function App(props) {
     path: "/projects",
     element: /*#__PURE__*/react.createElement(ProjectsPage, null)
   }), /*#__PURE__*/react.createElement(react_router_dist/* Route */.kX, {
-    path: "/resume",
+    path: "/projects/:slug",
+    element: /*#__PURE__*/react.createElement(ProjectDetails, null)
+  }), /*#__PURE__*/react.createElement(react_router_dist/* Route */.kX, {
+    path: "/experience",
     element: /*#__PURE__*/react.createElement(ResumePage, null)
   }), /*#__PURE__*/react.createElement(react_router_dist/* Route */.kX, {
     path: "/contact",
     element: /*#__PURE__*/react.createElement(ContactPage, null)
+  }), /*#__PURE__*/react.createElement(react_router_dist/* Route */.kX, {
+    path: "*",
+    element: /*#__PURE__*/react.createElement(_404, null)
   })), /*#__PURE__*/react.createElement(Footer, null)));
 };
 /* harmony default export */ const src_App = (App);
@@ -31808,9 +31841,35 @@ function sagaMiddlewareFactory(_temp) {
 
 /* harmony default export */ const redux_saga_core_npm_proxy_esm = (redux_saga_core_esm);
 
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+var arrayLikeToArray = __webpack_require__(5760);
+;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return (0,arrayLikeToArray/* default */.c)(arr);
+}
+;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
+;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || (0,unsupportedIterableToArray/* default */.c)(arr) || _nonIterableSpread();
+}
 // EXTERNAL MODULE: ../node_modules/lodash/lodash.js
 var lodash = __webpack_require__(7168);
 ;// CONCATENATED MODULE: ./src/store/reducers/globalReducer.js
+
 
 function globalReducer_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? globalReducer_ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : globalReducer_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -31837,13 +31896,26 @@ var GlobalReducer = function GlobalReducer() {
       });
       return state;
     case "GET_TECHNOLOGY_SUCCESS":
-      state = _objectSpread(_objectSpread({}, state), {}, {
-        technology: action.payload
+      var t1 = lodash.map(action.payload, function (t) {
+        if (t.name == null) return null;
+        return t.name;
       });
+      var new_t1 = [].concat(_toConsumableArray(state.technology), _toConsumableArray(t1));
+      state.technology = _toConsumableArray(new Set(new_t1));
       return state;
     case "GET_PROJECTS_SUCCESS":
       state = _objectSpread(_objectSpread({}, state), {}, {
         projects: action.payload
+      });
+      var t2 = lodash.map(state.projects, function (t) {
+        if (t.technologies == null) return [];
+        return t.technologies;
+      });
+      t2 = lodash.flatten(t2);
+      t2 = _toConsumableArray(new Set(t2));
+      var new_t2 = [].concat(_toConsumableArray(state.technology), _toConsumableArray(t2));
+      state = _objectSpread(_objectSpread({}, state), {}, {
+        technology: _toConsumableArray(new Set(new_t2))
       });
       return state;
   }
@@ -32345,10 +32417,6 @@ function debounce(delayLength, pattern, worker) {
 
 // EXTERNAL MODULE: ../node_modules/axios/index.js
 var axios = __webpack_require__(7884);
-// EXTERNAL MODULE: ./src/actions/actionTypes.js
-var actionTypes = __webpack_require__(2584);
-// EXTERNAL MODULE: ./src/actions/website.js
-var website = __webpack_require__(2044);
 ;// CONCATENATED MODULE: ./src/store/sagas/websiteSaga.js
 
 var _marked = /*#__PURE__*/regenerator.mark(onGetSkills),
@@ -32375,7 +32443,7 @@ function onGetSkills() {
           return a.index > b.index ? 1 : -1;
         });
         _context.next = 8;
-        return put((0,website/* getSkillsSuccess */.eA)(data));
+        return put(getSkillsSuccess(data));
       case 8:
         _context.next = 14;
         break;
@@ -32383,7 +32451,7 @@ function onGetSkills() {
         _context.prev = 10;
         _context.t0 = _context["catch"](0);
         _context.next = 14;
-        return put((0,website/* getSkillsFail */.cl)(_context.t0));
+        return put(getSkillsFail(_context.t0));
       case 14:
       case "end":
         return _context.stop();
@@ -32412,7 +32480,7 @@ function onGetExperience() {
           }
         }
         _context2.next = 8;
-        return put((0,website/* getExperienceSuccess */.At)(data));
+        return put(getExperienceSuccess(data));
       case 8:
         _context2.next = 15;
         break;
@@ -32421,7 +32489,7 @@ function onGetExperience() {
         _context2.t0 = _context2["catch"](0);
         console.log(_context2.t0);
         _context2.next = 15;
-        return put((0,website/* getExperienceFail */.y2)(_context2.t0));
+        return put(getExperienceFail(_context2.t0));
       case 15:
       case "end":
         return _context2.stop();
@@ -32429,7 +32497,7 @@ function onGetExperience() {
   }, _marked2, null, [[0, 10]]);
 }
 function onGetTechnology() {
-  var response, data, split;
+  var response, data;
   return regenerator.wrap(function onGetTechnology$(_context3) {
     while (1) switch (_context3.prev = _context3.next) {
       case 0:
@@ -32442,23 +32510,22 @@ function onGetTechnology() {
         data.sort(function (a, b) {
           return a.index > b.index ? 1 : -1;
         });
-        split = createColumns(data);
-        _context3.next = 9;
-        return put((0,website/* getTechnologySuccess */.KM)(split));
-      case 9:
-        _context3.next = 16;
+        _context3.next = 8;
+        return put(getTechnologySuccess(data));
+      case 8:
+        _context3.next = 15;
         break;
-      case 11:
-        _context3.prev = 11;
+      case 10:
+        _context3.prev = 10;
         _context3.t0 = _context3["catch"](0);
         console.log(_context3.t0);
-        _context3.next = 16;
-        return put((0,website/* getTechnologyFail */.yq)(_context3.t0));
-      case 16:
+        _context3.next = 15;
+        return put(getTechnologyFail(_context3.t0));
+      case 15:
       case "end":
         return _context3.stop();
     }
-  }, _marked3, null, [[0, 11]]);
+  }, _marked3, null, [[0, 10]]);
 }
 function onGetProjects() {
   var response, data;
@@ -32475,7 +32542,7 @@ function onGetProjects() {
           return a.createdAt > b.createdAt ? -1 : 1;
         });
         _context4.next = 8;
-        return put((0,website/* getProjectsSuccess */.gX)(data));
+        return put(getProjectsSuccess(data));
       case 8:
         _context4.next = 15;
         break;
@@ -32484,41 +32551,28 @@ function onGetProjects() {
         _context4.t0 = _context4["catch"](0);
         console.log(_context4.t0);
         _context4.next = 15;
-        return put((0,website/* getProjectsFail */.OI)(_context4.t0));
+        return put(getProjectsFail(_context4.t0));
       case 15:
       case "end":
         return _context4.stop();
     }
   }, _marked4, null, [[0, 10]]);
 }
-function createColumns(data) {
-  var arr = [];
-  arr[0] = [];
-  arr[1] = [];
-  data.forEach(function (el) {
-    if (el.type == "Day-to-day comfort") {
-      arr[0].push(el);
-    } else {
-      arr[1].push(el);
-    }
-  });
-  return arr;
-}
 function WebsiteSaga() {
   return regenerator.wrap(function WebsiteSaga$(_context5) {
     while (1) switch (_context5.prev = _context5.next) {
       case 0:
         _context5.next = 2;
-        return takeLatest$1(actionTypes/* GET_EXPERIENCE */.k9, onGetExperience);
+        return takeLatest$1(GET_EXPERIENCE, onGetExperience);
       case 2:
         _context5.next = 4;
-        return takeLatest$1(actionTypes/* GET_TECHNOLOGY */.um, onGetTechnology);
+        return takeLatest$1(GET_TECHNOLOGY, onGetTechnology);
       case 4:
         _context5.next = 6;
-        return takeLatest$1(actionTypes/* GET_SKILLS */.OU, onGetSkills);
+        return takeLatest$1(GET_SKILLS, onGetSkills);
       case 6:
         _context5.next = 8;
-        return takeLatest$1(actionTypes/* GET_PROJECTS */.If, onGetProjects);
+        return takeLatest$1(GET_PROJECTS, onGetProjects);
       case 8:
       case "end":
         return _context5.stop();

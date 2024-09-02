@@ -24,7 +24,7 @@ const Header = (props) => {
 	}, []);
 
 	const sideDrawerToggleHandler = () => {
-		setShowSideDrawer((prevState) => !prevState.showSideDrawer);
+		setShowSideDrawer((prevState) => !prevState);
 	};
 
 	return (
@@ -42,7 +42,10 @@ const Header = (props) => {
 
 				{showSideDrawer && <SideDrawer closed={sideDrawerToggleHandler} />}
 
-				<DrawerToggle clicked={sideDrawerToggleHandler} />
+				<DrawerToggle
+					clicked={sideDrawerToggleHandler}
+					showSideDrawer={showSideDrawer}
+				/>
 			</div>
 		</div>
 	);

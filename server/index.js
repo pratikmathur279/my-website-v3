@@ -10,12 +10,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import express from "express";
 
+import config from "./config/config.js";
+
 // import routes
 import projectsRouter from "./routes/projects.js";
 import experiencesRouter from "./routes/experiences.js";
 import skillsRouter from "./routes/skills.js";
 import technologyRouter from "./routes/technology.js";
 import emailRouter from "./routes/email.js";
+import { generateSitemap } from "./events/jobs/generateSitemap.js";
 
 const PORT = process.env.PORT || 3010;
 
@@ -58,6 +61,8 @@ app.use(
 
 // automated task scheduler
 // scheduler();
+
+// generateSitemap();
 
 // import api routes here
 app.use("/", projectsRouter);

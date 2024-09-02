@@ -108,20 +108,27 @@
     font-display: swap;
 }
 
+
+$contentMaxWidth: 1660px;
+
 // media queries
 $tabletBreak: 947px;
 $mobileLargeBreak: 767px;
 $mobileMediumBreak: 514px;
 $mobileSmallBreak: 350px;
 
-$tmsblue: #0060a9;
-$tmsgreen: #5bb65d;
+$appblue: #0060a9;
+$appgreen: #5bb65d;
+$darkblue: #282A39;
+$secondayColor: #e98266;
+
+
 $success: #2bb579;
 $danger: #da534f;
 $warning: #f0ad4e;
 $neutral: gray;
 $normal: #418aca;
-$darkblue: #282A39;
+
 $lightblue: #f3f8fb;
 
 $black: #090A11;
@@ -130,7 +137,6 @@ $brown: #4C3227;
 $darkgrey: #53535B;
 $lightgrey: #CCC4C2;
 $darkorange: #B44C31;
-$orange: #e98266;
 $lightorange: #D78D6C;
 $lightnavy: #333647;
 $offwhite: #f8f8f8;

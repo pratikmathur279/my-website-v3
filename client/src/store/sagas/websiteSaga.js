@@ -58,9 +58,7 @@ function* onGetTechnology() {
 		var data = response.data;
 		data.sort((a, b) => (a.index > b.index ? 1 : -1));
 
-		var split = createColumns(data);
-
-		yield put(getTechnologySuccess(split));
+		yield put(getTechnologySuccess(data));
 	} catch (error) {
 		console.log(error);
 		yield put(getTechnologyFail(error));
@@ -78,21 +76,6 @@ function* onGetProjects() {
 		console.log(error);
 		yield put(getProjectsFail(error));
 	}
-}
-
-function createColumns(data) {
-	let arr = [];
-	arr[0] = [];
-	arr[1] = [];
-	data.forEach((el) => {
-		if (el.type == "Day-to-day comfort") {
-			arr[0].push(el);
-		} else {
-			arr[1].push(el);
-		}
-	});
-
-	return arr;
 }
 
 function* WebsiteSaga() {

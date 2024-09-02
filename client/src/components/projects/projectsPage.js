@@ -10,18 +10,13 @@ const ProjectsPage = (props) => {
 	const dispatch = useDispatch();
 	const [showProject, setShowProject] = useState(false);
 	const [selected, setSelected] = useState({});
-
 	const [projectRows, setProjectRows] = useState([]);
 
 	const { projects } = useSelector((state) => state.GlobalReducer);
 
-	useEffect(() => {
-		dispatch(getProjects());
-	}, []);
+	const allProjectsRef = React.useRef();
 
 	useEffect(() => {
-		console.log(projects);
-
 		let split = [];
 		if (window.innerWidth < 900) {
 			split = createRows(projects, 1);
@@ -30,8 +25,6 @@ const ProjectsPage = (props) => {
 		} else {
 			split = createRows(projects, 3);
 		}
-
-		console.log(split);
 
 		setProjectRows(split);
 	}, [projects]);
@@ -47,26 +40,7 @@ const ProjectsPage = (props) => {
 		return arr;
 	}
 
-	function openModalHandler(id) {
-		if (showProject) {
-			document.getElementsByTagName("body")[0].classList.remove("no-scroll");
-
-			setShowProject((prev) => !prev);
-		} else {
-			let project = _.find(projects, (p) => {
-				return p.id == id;
-			});
-
-			if (project) {
-				setShowProject(true);
-				setSelected(project);
-				document.getElementsByTagName("body")[0].classList.add("no-scroll");
-			}
-		}
-	}
-
 	const selectProject = (project) => {
-		console.log(project);
 		if ("id" in selected) {
 			if (selected.id === project.id) {
 				setSelected({});
@@ -88,11 +62,23 @@ const ProjectsPage = (props) => {
 		);
 	};
 
+	const scrollToAllProjects = () => {
+		allProjectsRef.current.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+	};
+
 	return (
 		<div className="projects-wrapper">
 			<div className="hero-wrapper">
 				<div className="hero-container">
 					<h3 className="ProjectsHeader">Projects</h3>
+					<div className="download">
+						<a onClick={() => scrollToAllProjects()}>
+							<span>View All</span>
+						</a>
+					</div>
 				</div>
 
 				<div className="hero-mouse">
@@ -100,7 +86,9 @@ const ProjectsPage = (props) => {
 				</div>
 			</div>
 
-			<div className="container">{projectRows.map(buildRow)}</div>
+			<div ref={allProjectsRef} id="allProjects" className="container">
+				{projectRows.map(buildRow)}
+			</div>
 		</div>
 	);
 };

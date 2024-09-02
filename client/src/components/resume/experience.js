@@ -5,7 +5,7 @@ const Experience = (props) => {
 	const buildRow = (responsibility) => <li>{responsibility}</li>;
 
 	return (
-		<div className="Experience">
+		<React.Fragment>
 			<h3>{props.data.position}</h3>
 			<div className="container">
 				<h4>
@@ -15,11 +15,13 @@ const Experience = (props) => {
 					</span>
 				</h4>
 			</div>
-			{client ? <h4>Client: {client}</h4> : ""}
+
+			{client && client != "" && <h4>Client: {client}</h4>}
+
 			<ul className="responsibilities">
 				{props.data.responsibilities.map(buildRow)}
 			</ul>
-		</div>
+		</React.Fragment>
 	);
 };
 

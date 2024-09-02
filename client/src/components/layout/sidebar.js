@@ -4,7 +4,7 @@ import NavigationItems from "./navigationItems";
 
 const SideDrawer = (props) => {
 	return (
-		<div id="modal">
+		<div id="sidebar-modal">
 			<div className="sidebar-wrapper">
 				<NavigationItems />
 			</div>

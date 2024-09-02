@@ -25,10 +25,13 @@ const GlobalReducer = (state = initialState, action) => {
 
 			return state;
 		case "GET_TECHNOLOGY_SUCCESS":
-			state = {
-				...state,
-				technology: action.payload,
-			};
+			let t1 = _.map(action.payload, (t) => {
+				if (t.name == null) return null;
+				return t.name;
+			});
+
+			let new_t1 = [...state.technology, ...t1];
+			state.technology = [...new Set(new_t1)];
 
 			return state;
 
@@ -36,6 +39,20 @@ const GlobalReducer = (state = initialState, action) => {
 			state = {
 				...state,
 				projects: action.payload,
+			};
+
+			let t2 = _.map(state.projects, (t) => {
+				if (t.technologies == null) return [];
+				return t.technologies;
+			});
+
+			t2 = _.flatten(t2);
+			t2 = [...new Set(t2)];
+
+			let new_t2 = [...state.technology, ...t2];
+			state = {
+				...state,
+				technology: [...new Set(new_t2)],
 			};
 
 			return state;

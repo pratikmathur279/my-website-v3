@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[651],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -84,8 +70,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ contactPage)
 });
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 5 modules
-var slicedToArray = __webpack_require__(5932);
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(4799);
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
 // EXTERNAL MODULE: ../node_modules/react-google-recaptcha-v3/dist/react-google-recaptcha-v3.esm.js
@@ -104,11 +90,12 @@ var ContactForm = function ContactForm(props) {
     className: "ContactForm"
   }, /*#__PURE__*/react.createElement("div", {
     className: "contact-left-container"
-  }, /*#__PURE__*/react.createElement("h1", null, "Let's talk."), /*#__PURE__*/react.createElement("h3", null, "Have a question or want to work together? Fill in the form below and I'll get back to you as soon as possible."), /*#__PURE__*/react.createElement("h2", {
+  }, /*#__PURE__*/react.createElement("h2", null, "Let's talk."), /*#__PURE__*/react.createElement("h3", null, "Have a question or want to work together? Fill in the form below and I'll get back to you as soon as possible."), /*#__PURE__*/react.createElement("a", {
+    href: "mailto:pratikmathur279@gmail.com",
     className: "email"
-  }, /*#__PURE__*/react.createElement("a", {
-    href: "mailto:pratikmathur279@gmail.com"
-  }, "pratikmathur279@gmail.com")), /*#__PURE__*/react.createElement("h2", null, "Phone: 703-981-5938 "), /*#__PURE__*/react.createElement("div", {
+  }, "pratikmathur279@gmail.com"), /*#__PURE__*/react.createElement("a", {
+    href: "tel:7039815938"
+  }, "703-981-5938"), /*#__PURE__*/react.createElement("div", {
     className: "map-container"
   }, /*#__PURE__*/react.createElement("iframe", {
     src: "https://www.google.com/maps/d/embed?mid=1DQ1fZit-lxoXEQrhlvkOApGVm-0&hl=en&ehbc=2E312F"
@@ -173,11 +160,6 @@ var ContactPage = function ContactPage(props) {
     className: "mouse"
   }))), /*#__PURE__*/react.createElement(contactForm, {
     formData: formData
-    // emailSent={props.emailSent}
-    // errors={props.errors}
-    // formControls={props.formControls}
-    // onChange={props.onChange}
-    // onClick={props.onClick}
   }));
 };
 /* harmony default export */ const contactPage = (ContactPage);

@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.${NODE_ENV:-production} # Use NODE_ENV environment variable to determine Dockerfile
+    ports:
+      - "3010:3010"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production} # Default to production if NODE_ENV is not set
+    volumes:
+      - .:/app

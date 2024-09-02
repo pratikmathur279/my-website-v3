@@ -50,6 +50,7 @@ const Footer = (props) => {
 					/>
 				</div>
 			</div>
+
 			<div className="FooterDiv">
 				<p>©{year} Pratik Mathur. All rights reserved.</p>
 			</div>

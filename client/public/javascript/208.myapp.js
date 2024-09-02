@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[208],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -84,14 +70,12 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ projectsPage)
 });
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 5 modules
-var slicedToArray = __webpack_require__(5932);
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(4799);
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
 // EXTERNAL MODULE: ../node_modules/react-redux/es/index.js + 13 modules
 var es = __webpack_require__(1552);
-// EXTERNAL MODULE: ./src/actions/website.js
-var website = __webpack_require__(2044);
 ;// CONCATENATED MODULE: ./src/components/projects/project.js
 
 var Project = function Project(props) {
@@ -149,20 +133,22 @@ var ProjectInformation = function ProjectInformation(props) {
   }, "Click here"), " ", "to play the game!") : ""));
 };
 /* harmony default export */ const projectInformation = ((/* unused pure expression or super */ null && (ProjectInformation)));
+// EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
+var dist = __webpack_require__(2112);
 ;// CONCATENATED MODULE: ./src/components/projects/projectRow.js
 
 
+
 var ProjectRow = function ProjectRow(props) {
-  console.log(props);
   var buildRow = function buildRow(project, index) {
     var isSelected = project.id === props.selected.id;
     var className = isSelected ? "project-preview active" : "project-preview";
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/react.createElement(dist/* Link */.cH, {
       className: className,
-      key: index,
-      onClick: function onClick() {
-        return props.selectProject(project);
-      }
+      key: index
+      // onClick={() => props.selectProject(project)}
+      ,
+      to: "/projects/".concat(project.slug)
     }, /*#__PURE__*/react.createElement("h3", {
       className: "project-name"
     }, project.title), /*#__PURE__*/react.createElement("div", {
@@ -216,11 +202,8 @@ var ProjectsPage = function ProjectsPage(props) {
       return state.GlobalReducer;
     }),
     projects = _useSelector.projects;
+  var allProjectsRef = react.useRef();
   (0,react.useEffect)(function () {
-    dispatch((0,website/* getProjects */.UT)());
-  }, []);
-  (0,react.useEffect)(function () {
-    console.log(projects);
     var split = [];
     if (window.innerWidth < 900) {
       split = createRows(projects, 1);
@@ -229,7 +212,6 @@ var ProjectsPage = function ProjectsPage(props) {
     } else {
       split = createRows(projects, 3);
     }
-    console.log(split);
     setProjectRows(split);
   }, [projects]);
   function createRows(orignal, length) {
@@ -241,25 +223,7 @@ var ProjectsPage = function ProjectsPage(props) {
     }
     return arr;
   }
-  function openModalHandler(id) {
-    if (showProject) {
-      document.getElementsByTagName("body")[0].classList.remove("no-scroll");
-      setShowProject(function (prev) {
-        return !prev;
-      });
-    } else {
-      var project = _.find(projects, function (p) {
-        return p.id == id;
-      });
-      if (project) {
-        setShowProject(true);
-        setSelected(project);
-        document.getElementsByTagName("body")[0].classList.add("no-scroll");
-      }
-    }
-  }
   var selectProject = function selectProject(project) {
-    console.log(project);
     if ("id" in selected) {
       if (selected.id === project.id) {
         setSelected({});
@@ -276,6 +240,12 @@ var ProjectsPage = function ProjectsPage(props) {
       selectProject: selectProject
     });
   };
+  var scrollToAllProjects = function scrollToAllProjects() {
+    allProjectsRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  };
   return /*#__PURE__*/react.createElement("div", {
     className: "projects-wrapper"
   }, /*#__PURE__*/react.createElement("div", {
@@ -284,11 +254,19 @@ var ProjectsPage = function ProjectsPage(props) {
     className: "hero-container"
   }, /*#__PURE__*/react.createElement("h3", {
     className: "ProjectsHeader"
-  }, "Projects")), /*#__PURE__*/react.createElement("div", {
+  }, "Projects"), /*#__PURE__*/react.createElement("div", {
+    className: "download"
+  }, /*#__PURE__*/react.createElement("a", {
+    onClick: function onClick() {
+      return scrollToAllProjects();
+    }
+  }, /*#__PURE__*/react.createElement("span", null, "View All")))), /*#__PURE__*/react.createElement("div", {
     className: "hero-mouse"
   }, /*#__PURE__*/react.createElement("div", {
     className: "mouse"
   }))), /*#__PURE__*/react.createElement("div", {
+    ref: allProjectsRef,
+    id: "allProjects",
     className: "container"
   }, projectRows.map(buildRow)));
 };

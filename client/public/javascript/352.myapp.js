@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[352],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -79,7 +65,7 @@ function _slicedToArray(arr, i) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5932);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4799);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
 
 
@@ -200,8 +186,6 @@ var es = __webpack_require__(1552);
 var dist = __webpack_require__(2112);
 // EXTERNAL MODULE: ./src/components/common/reactIcons.js
 var reactIcons = __webpack_require__(56);
-// EXTERNAL MODULE: ./src/actions/website.js
-var website = __webpack_require__(2044);
 ;// CONCATENATED MODULE: ./src/components/resume/experience.js
 
 var Experience = function Experience(props) {
@@ -209,11 +193,9 @@ var Experience = function Experience(props) {
   var buildRow = function buildRow(responsibility) {
     return /*#__PURE__*/react.createElement("li", null, responsibility);
   };
-  return /*#__PURE__*/react.createElement("div", {
-    className: "Experience"
-  }, /*#__PURE__*/react.createElement("h3", null, props.data.position), /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("h3", null, props.data.position), /*#__PURE__*/react.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/react.createElement("h4", null, props.data.name, ",", " ", /*#__PURE__*/react.createElement("span", null, props.data.from, " - ", props.data.to))), client ? /*#__PURE__*/react.createElement("h4", null, "Client: ", client) : "", /*#__PURE__*/react.createElement("ul", {
+  }, /*#__PURE__*/react.createElement("h4", null, props.data.name, ",", " ", /*#__PURE__*/react.createElement("span", null, props.data.from, " - ", props.data.to))), client && client != "" && /*#__PURE__*/react.createElement("h4", null, "Client: ", client), /*#__PURE__*/react.createElement("ul", {
     className: "responsibilities"
   }, props.data.responsibilities.map(buildRow)));
 };
@@ -223,11 +205,11 @@ var Experience = function Experience(props) {
 
 var WorkExperience = function WorkExperience(props) {
   var buildColumns = function buildColumns(col, i) {
-    var heading = i === 0 ? "Day-To-Day Comfort" : "Experience with";
-    return /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("h3", null, heading), col.map(buildTech));
-  };
-  var buildTech = function buildTech(tech) {
-    return /*#__PURE__*/react.createElement("li", null, tech.name);
+    return /*#__PURE__*/react.createElement("div", {
+      className: "tech-col",
+      key: i,
+      id: "tech-col-" + i
+    }, col);
   };
   var buildExperiences = function buildExperiences(exp) {
     return /*#__PURE__*/react.createElement("div", {
@@ -237,13 +219,17 @@ var WorkExperience = function WorkExperience(props) {
       data: exp
     }));
   };
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
     className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Technologies"), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react.createElement("h2", null, "Technologies")), /*#__PURE__*/react.createElement("div", {
     className: "content-row TechnologyRow"
   }, props.technology.map(buildColumns))), /*#__PURE__*/react.createElement("div", {
     className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Work Experience"), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react.createElement("h2", null, "Work Experience")), /*#__PURE__*/react.createElement("div", {
     className: "content-row"
   }, props.experience.map(buildExperiences))));
 };
@@ -262,10 +248,6 @@ var ResumePage = function ResumePage(props) {
     }),
     experience = _useSelector.experience,
     technology = _useSelector.technology;
-  (0,react.useEffect)(function () {
-    dispatch((0,website/* getExperience */.Mb)());
-    dispatch((0,website/* getTechnology */.mo)());
-  }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: "work-experience-wrapper"
   }, /*#__PURE__*/react.createElement("div", {
@@ -275,7 +257,7 @@ var ResumePage = function ResumePage(props) {
   }, /*#__PURE__*/react.createElement("h3", null, "Dig a little deeper."), /*#__PURE__*/react.createElement("div", {
     className: "download"
   }, /*#__PURE__*/react.createElement("a", {
-    href: "https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf",
+    href: "https://pratikmathur-assets.s3.amazonaws.com/PratikMathur_Resume.pdf",
     target: "_blank",
     className: "button"
   }, /*#__PURE__*/react.createElement("span", null, "Download Resume", " ", /*#__PURE__*/react.createElement(reactIcons/* default */.c, {
@@ -286,23 +268,25 @@ var ResumePage = function ResumePage(props) {
     className: "hero-mouse"
   }, /*#__PURE__*/react.createElement("div", {
     className: "mouse"
-  }))), /*#__PURE__*/react.createElement(workExperience, {
-    experience: experience
-    // loading={this.state.loading}
-    ,
+  }))), /*#__PURE__*/react.createElement("div", {
+    className: "page-content-wrapper"
+  }, /*#__PURE__*/react.createElement(workExperience, {
+    experience: experience,
     technology: technology
   }), /*#__PURE__*/react.createElement("div", {
     className: "latest-projects-wrapper"
   }, /*#__PURE__*/react.createElement("div", {
     className: "Section"
-  }, /*#__PURE__*/react.createElement("h2", null, "Latest Work"), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react.createElement("h2", null, "Latest Work")), /*#__PURE__*/react.createElement("div", {
     className: "content-row"
   }, /*#__PURE__*/react.createElement("div", {
     className: "latest-projects"
   }, /*#__PURE__*/react.createElement("h3", null, "Interested to see what I\u2019ve been up to?"), /*#__PURE__*/react.createElement(dist/* Link */.cH, {
     exact: true,
     to: "/projects"
-  }, "View Projects"))))));
+  }, "View Projects")))))));
 };
 /* harmony default export */ const resumePage = (ResumePage);
 

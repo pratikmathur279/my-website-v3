@@ -1,18 +1,18 @@
 import React from "react";
 import Project from "./project";
+import { Link } from "react-router-dom";
 
 const ProjectRow = (props) => {
-	console.log(props);
-
 	const buildRow = (project, index) => {
 		let isSelected = project.id === props.selected.id;
 		let className = isSelected ? "project-preview active" : "project-preview";
 
 		return (
-			<div
+			<Link
 				className={className}
 				key={index}
-				onClick={() => props.selectProject(project)}
+				// onClick={() => props.selectProject(project)}
+				to={`/projects/${project.slug}`}
 			>
 				<h3 className="project-name">{project.title}</h3>
 				<div className="preview-box">
@@ -24,7 +24,7 @@ const ProjectRow = (props) => {
 						alt={project.name}
 					/>
 				</div>
-			</div>
+			</Link>
 		);
 	};
 

@@ -4,17 +4,11 @@ import Experience from "./experience.js";
 
 const WorkExperience = (props) => {
 	const buildColumns = (col, i) => {
-		let heading = i === 0 ? "Day-To-Day Comfort" : "Experience with";
 		return (
-			<ul>
-				<h3>{heading}</h3>
-				{col.map(buildTech)}
-			</ul>
+			<div className="tech-col" key={i} id={"tech-col-" + i}>
+				{col}
+			</div>
 		);
-	};
-
-	const buildTech = (tech) => {
-		return <li>{tech.name}</li>;
 	};
 
 	const buildExperiences = (exp) => {
@@ -26,20 +20,27 @@ const WorkExperience = (props) => {
 	};
 
 	return (
-		<div>
+		<React.Fragment>
 			<div className="Section">
-				<h2>Technologies</h2>
+				<div className="header">
+					<h2>Technologies</h2>
+				</div>
+
 				<div className="content-row TechnologyRow">
 					{props.technology.map(buildColumns)}
 				</div>
 			</div>
+
 			<div className="Section">
-				<h2>Work Experience</h2>
+				<div className="header">
+					<h2>Work Experience</h2>
+				</div>
+
 				<div className="content-row">
 					{props.experience.map(buildExperiences)}
 				</div>
 			</div>
-		</div>
+		</React.Fragment>
 	);
 };
 

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[832],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -82,9 +68,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
 /* harmony import */ var _common_reactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2112);
+
 
 
 var AboutPage = function AboutPage(props) {
+  var yearsExp = new Date().getFullYear() - 2018;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "about-page-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -96,30 +85,43 @@ var AboutPage = function AboutPage(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mouse"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "description"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "About me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "description-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I am a web developer, currently working at Total Mortgage Services, LLC. My journey as a developer started at the age of 13, where I was introduced to the concepts of web development such as HTML and CSS. After that, I got my Bachelors and Master\u2019s degree in Computer Science. This has helped me widen my range of knowledge and gather experiences in the field of Web Development.", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Constantly seeking to improve my skillset, I thrive on learning new web technologies in my spare time through online resources such as udemy.com and coursera.org, as well as diving head-first into new and unfamiliar projects."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, " ", "In my spare time, you\u2019ll find me playing video games, playing soccer and learning new programming languages."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "description backstory"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Back Story"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "description-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, " ", "I knew what I wanted to do by the age of 13. The short version is that I loved playing video games growing up and always had an interest to know how they were made. So, a small idea turned into me wanting to make my own video game. And after a few friends helping to fill up notebooks with thoughts, ideas, and drawings we quickly realized that we needed a website. Obviously, this was before the internet was filled with this type of knowledge readily available at your fingertips (YouTube, Facebook, and even MySpace weren't a thing yet). So, I was able to teach myself the basics and build something."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Fast-forwarding, after graduating college with an Bachelors degree in Computer Science and Masters degree in Computer Science, I made my way into multiple jobs. First starting out with a couple of internships as a Software Developer, I gained professional and industry experience. This was the start of many core understandings and played a key role in my thought process when thinking about design as a whole, especially when it comes to the system design and development. After that, working my way into the development industry was a path that I created for myself based on one question that I still find myself asking, how does it work? This was the one question that started the passion I call my career."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "After years in the industry, and having gone through multiple opportunities, some good, and some bad, I am in the process of widening my range of knowledge and improving my skillset in Software Development. So, here I am years later still doing the same thing, and still loving it."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "technical-desc"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Technical Experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "description-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "A full-stack software engineer with over 4 years of experience."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I have maintained, developed and launched multiple projects from scratch, carrying the development of its' back-end and front-end codebases."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "My current toolset includes React, Redux, Angular, Vue.js, JavaScript & TypeScript (Node.js as well), PHP Laravel, Kubernetes, Docker and all the other various frameworks, libraries and technologies related to them.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "front-end-desc"
+    className: "page-content-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "Section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "About me")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I'm a full-stack software developer with a passion for building innovative digital products. Since the age of 13, when I was first introduced to the world of web development through HTML and CSS, my journey has been fueled by a desire to learn and grow. My Bachelor's and Master's degrees in Computer Science further solidified my foundation and broadened my knowledge."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Throughout my ", yearsExp, "+ years of experience, I've thrived in remote environments, collaborating with talented individuals on projects for both businesses and consumers. Embracing diverse opportunities, both successes and challenges, has fueled my drive to continuously expand my skillset and refine my approach to software development. Even after years in the field, my enthusiasm for crafting solutions through code remains undimmed."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I'm a constant learner, always seeking to improve my abilities. In my spare time, I leverage online resources like Udemy and Coursera to explore new web technologies and dive headfirst into unfamiliar projects."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "When I'm not coding, you might find me on the soccer field, playing video games, or exploring the world of new programming languages."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I'm open to job opportunities that allow me to contribute my skills, learn from talented colleagues, and continue my professional growth. If you have a role that matches my qualifications, please don't hesitate to contact me."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .cH, {
+    to: "/contact",
+    className: "btn secondary"
+  }, "Contact Me"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "Section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Back Story")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I knew what I wanted to do by the age of 13. The short version is that I loved playing video games growing up and always had an interest to know how they were made. So, a small idea turned into me wanting to make my own video game. And after a few friends helping to fill up notebooks with thoughts, ideas, and drawings we quickly realized that we needed a website. Obviously, this was before the internet was filled with this type of knowledge readily available at your fingertips (YouTube, Facebook, and even MySpace weren't a thing yet). So, I was able to teach myself the basics and build something."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Fast-forwarding, after graduating college with an Bachelors degree in Computer Science and Masters degree in Computer Science, I made my way into multiple jobs. First starting out with a couple of internships as a Software Developer, I gained professional and industry experience. This was the start of many core understandings and played a key role in my thought process when thinking about design as a whole, especially when it comes to the system design and development. After that, working my way into the development industry was a path that I created for myself based on one question that I still find myself asking, how does it work? This was the one question that started the passion I call my career."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "After years in the industry, and having gone through multiple opportunities, some good, and some bad, I am in the process of widening my range of knowledge and improving my skillset in Software Development. So, here I am years later still doing the same thing, and still loving it."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "Section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Technical Experience")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "A full-stack software engineer with over ", yearsExp, " years of experience."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I have maintained, developed and launched multiple projects from scratch, carrying the development of its' back-end and front-end codebases."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "My current toolset includes React, Redux, Angular, Vue.js, JavaScript & TypeScript (Node.js as well), PHP Laravel, Kubernetes, Docker and all the other various frameworks, libraries and technologies related to them.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content front-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_reactIcons__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .c, {
     id: "CustomTag",
     size: "24",
     icon: "BsDisplay"
-  }), "FRONT-END WEB DEVELOPMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I specialize in applications written in both React and Angular."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "My current experience and skills in front-end includes:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "TypeScript/JavaScript development: bootstraping, refactoring, improving the structure, reliability, build setup;"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "full integration of front-end development using tools like Webpack with features like automatic code reload, code minifications, multiple environments support, CI/CD, Storybook components library, automated testing of accessibility, server-side render and visual snapshots"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "sense of system design and UX,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "huge experience in almost all of the JS ecosystems, by having used in the past many libraries like Next.js, React, Redux, Redux-Observable, RxJS, Angular, Ionic Framework, Backbone, jQuery, Lodash/Underscore and many else."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "backend-desc"
+  }), "FRONT-END WEB DEVELOPMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "I specialize in applications written in both React and Angular."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "My current experience and skills in front-end includes:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("b", null, "TypeScript/JavaScript development:"), " bootstraping, refactoring, improving the structure, reliability, build setup;"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Full integration of front-end development using tools like Webpack with features like automatic code reload, code minifications, multiple environments support, CI/CD, Storybook components library, automated testing of accessibility, server-side render and visual snapshots"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Sense of system design and UX,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Huge experience in almost all of the JS ecosystems, by having used in the past many libraries like Next.js, React, Redux, Redux-Observable, RxJS, Angular, Ionic Framework, Backbone, jQuery, Lodash/Underscore and many else."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content backend-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_reactIcons__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .c, {
     id: "CustomTag",
     size: "24",
     icon: "FaCode"
-  }), "BACKEND WEB DEVELOPMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "In back-end development, my current stack involves PHP Laravel, Java, NodeJS and Ruby on Rails."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Nearly every app I have launched in the past had the back-end done also by me. In order to improve the development speed, performance and reliability, I have changed languages and frameworks already multiple times, from PHP, Ruby to Elixir and Node.js; configured servers using just the shell, then Apache and wampp, and now Docker and Kubernetes."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "splitting the back-end into separate domains and microservices,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "cooperation with APIs, remote data synchronizations, cloud servers, asynchronous workers,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "using different types of databases (like PostgreSQL, MySQL, Elasticsearch, Redis)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "dividing the servers into different machine nodes / docker containers; database sharding; load balancing,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "refactoring existing applications, by improving code readibility, separating concerns into separate functions/classes/modules, taking the business logic out from your request/response layer into separate modules (DDD), and moving the app architecture into an event-based one")))));
+  }), "BACKEND WEB DEVELOPMENT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "In back-end development, my current stack involves PHP Laravel, Java, NodeJS and Ruby on Rails."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Nearly every app I have launched in the past had the back-end done also by me. In order to improve the development speed, performance and reliability, I have changed languages and frameworks already multiple times, from PHP, Ruby to Elixir and Node.js; configured servers using just the shell, then Apache and wampp, and now Docker and Kubernetes."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Splitting the back-end into separate domains and microservices,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Cooperation with APIs, remote data synchronizations, cloud servers, asynchronous workers,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Using different types of databases (like PostgreSQL, MySQL, Elasticsearch, Redis, NoSQL)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Dividing the servers into different machine nodes / docker containers; database sharding; load balancing,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, "Refactoring existing applications, by improving code readibility, separating concerns into separate functions/classes/modules, taking the business logic out from your request/response layer into separate modules (DDD), and moving the app architecture into an event-based one")))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutPage);
 
@@ -131,7 +133,7 @@ var AboutPage = function AboutPage(props) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5932);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4799);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
 
 

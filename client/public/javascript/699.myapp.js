@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[699],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -84,8 +70,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ header)
 });
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 5 modules
-var slicedToArray = __webpack_require__(5932);
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(4799);
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
 // EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
@@ -115,8 +101,8 @@ var NavigationItems = function NavigationItems(props) {
   }, "Portfolio"), /*#__PURE__*/react.createElement(navigationItem, {
     to: "/about"
   }, "About"), /*#__PURE__*/react.createElement(navigationItem, {
-    to: "/resume"
-  }, "Resume"), /*#__PURE__*/react.createElement(navigationItem, {
+    to: "/experience"
+  }, "Experience"), /*#__PURE__*/react.createElement(navigationItem, {
     to: "/projects"
   }, "Projects"), /*#__PURE__*/react.createElement(navigationItem, {
     to: "/blog"
@@ -132,7 +118,7 @@ var DrawerToggle = function DrawerToggle(props) {
     className: "DrawerToggle"
   }, /*#__PURE__*/react.createElement("div", {
     id: "Burger",
-    className: "Burger",
+    className: "Burger ".concat(props.showSideDrawer ? "active" : ""),
     onClick: props.clicked
   }));
 };
@@ -142,7 +128,7 @@ var DrawerToggle = function DrawerToggle(props) {
 
 var SideDrawer = function SideDrawer(props) {
   return /*#__PURE__*/react.createElement("div", {
-    id: "modal"
+    id: "sidebar-modal"
   }, /*#__PURE__*/react.createElement("div", {
     className: "sidebar-wrapper"
   }, /*#__PURE__*/react.createElement(navigationItems, null)));
@@ -173,7 +159,7 @@ var Header = function Header(props) {
   }, []);
   var sideDrawerToggleHandler = function sideDrawerToggleHandler() {
     setShowSideDrawer(function (prevState) {
-      return !prevState.showSideDrawer;
+      return !prevState;
     });
   };
   return /*#__PURE__*/react.createElement("div", {
@@ -193,7 +179,8 @@ var Header = function Header(props) {
   }, /*#__PURE__*/react.createElement(navigationItems, null)), showSideDrawer && /*#__PURE__*/react.createElement(sidebar, {
     closed: sideDrawerToggleHandler
   }), /*#__PURE__*/react.createElement(drawerToggle, {
-    clicked: sideDrawerToggleHandler
+    clicked: sideDrawerToggleHandler,
+    showSideDrawer: showSideDrawer
   })));
 };
 /* harmony default export */ const header = (Header);

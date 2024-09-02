@@ -51,16 +51,21 @@
     border-radius: 20px;
     outline: none;
     text-decoration: none;
-    margin: 0;
+
+    width: fit-content;
 
     &.transparent {
         background-color: transparent;
         color: $darkblue;
-        font-size: 1.2em;
-        text-decoration: underline;
+        font-size: 1em;
+        text-decoration: none;
+        border: 1px solid #d3d3d3;
 
         &:hover {
             text-decoration: none;
+            background-color: $darkblue;
+            border-color: $darkblue;
+            color: white;
         }
     }
 
@@ -76,15 +81,15 @@
         color: white;
     }
 
-    &.tmsblue {
-        background: $tmsblue;
+    &.appblue {
+        background: $appblue;
         color: white;
         width: fit-content;
         min-width: 200px;
     }
 
-    &.tmsgreen {
-        background: $tmsgreen;
+    &.appgreen {
+        background: $appgreen;
         color: white;
     }
 
@@ -92,6 +97,12 @@
         background: $neutral;
         color: white;
         cursor: default;
+    }
+
+    &.secondary {
+        background: $secondayColor;
+        color: white;
+        cursor: pointer;
     }
 
     &.disabled {
@@ -121,7 +132,7 @@
 }
 
 .input-error {
-    margin: 0;
+
     color: $danger;
     font-size: 1.15em;
     padding: 0;
@@ -151,17 +162,13 @@
             gap: 8px;
 
             .Toastify__toast-icon {
-                margin: 0;
+
                 width: 27px;
 
                 svg {
                     width: 27px;
                     height: 27px;
                 }
-            }
-
-            div {
-                line-height: 1.35em;
             }
         }
 
@@ -190,7 +197,6 @@
 //     transform: ;
 //     z-index: 99999999;
 //     width: 325px;
-//     box-sizing: border-box;
 //     .toast {
 //         display: inline-block;
 //         padding: 10px 20px;
@@ -199,13 +205,12 @@
 //         z-index: 1000;
 //         margin: 8px 0;
 //         width: 100%;
-//         box-sizing: border-box;
 //         position: relative;
 //         &-error {
 //             background-color: $danger;
 //         }
 //         &-success {
-//             background-color: $tmsgreen;
+//             background-color: $appgreen;
 //         }
 //         &-info {
 //             background-color: #17a2b8;
@@ -251,15 +256,12 @@
         padding: 30px 20px;
         border-radius: 20px;
         flex-wrap: wrap;
-        box-sizing: border-box;
 
         .header-wrapper {
             padding: 12px;
             margin-bottom: 5px;
 
-            h3 {
-                margin: 0;
-            }
+            h3 {}
         }
 
         .content {
@@ -278,7 +280,7 @@
                 gap: 15px;
 
                 p {
-                    margin: 0;
+
                     text-align: left;
                 }
             }
@@ -418,9 +420,7 @@
     /* see note above */
 }
 
-.ldio-qs2whpgwd6b div {
-    box-sizing: content-box;
-}
+.ldio-qs2whpgwd6b div {}
 
 //pulse loader - end
 
@@ -428,4 +428,45 @@
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
+}
+
+.not-found-wrapper {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        flex-direction: column;
+        width: 100%;
+        height: 750px;
+        gap: 15px;
+
+        svg {
+            width: 100px;
+            height: 100px;
+            fill: #083953;
+        }
+
+        h1 {
+            font-size: 7rem;
+            letter-spacing: 1.5px;
+            color: #083953;
+
+        }
+
+        h2 {
+            font-size: 2.8em;
+        }
+
+        h5 {
+            font-size: 1.15em;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[500],{
 
-/***/ 5932:
+/***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -42,22 +42,8 @@ function _iterableToArrayLimit(r, l) {
     return a;
   }
 }
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+var unsupportedIterableToArray = __webpack_require__(8652);
 ;// CONCATENATED MODULE: ../node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
@@ -68,7 +54,7 @@ function _nonIterableRest() {
 
 
 function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || (0,unsupportedIterableToArray/* default */.c)(arr, i) || _nonIterableRest();
 }
 
 /***/ }),
@@ -79,7 +65,7 @@ function _slicedToArray(arr, i) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5932);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4799);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
 
 
@@ -192,8 +178,8 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ homepage)
 });
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 5 modules
-var slicedToArray = __webpack_require__(5932);
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(4799);
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
 // EXTERNAL MODULE: ../node_modules/react-redux/es/index.js + 13 modules
@@ -228,41 +214,43 @@ var Hexagons = function Hexagons(props) {
   }, props.hexagons.map(buildList)));
 };
 /* harmony default export */ const homepage_hexagons = (Hexagons);
-// EXTERNAL MODULE: ./src/actions/website.js
-var website = __webpack_require__(2044);
+// EXTERNAL MODULE: ./src/components/layout/footerImage.js
+var footerImage = __webpack_require__(5048);
 ;// CONCATENATED MODULE: ./src/components/homepage/filler.js
 
-var Filler = function Filler(props) {
-  return /*#__PURE__*/react.createElement("div", {
+var filler_Filler = function Filler(props) {
+  return /*#__PURE__*/React.createElement("div", {
     className: "Filler",
     style: {
       width: "".concat(props.skill.percentage, "% ")
     }
-  }, /*#__PURE__*/react.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
     value: props.skill.name
-  }), /*#__PURE__*/react.createElement("span", {
-    value: props.skill.percentage
   }));
 };
-/* harmony default export */ const filler = (Filler);
+/* harmony default export */ const filler = ((/* unused pure expression or super */ null && (filler_Filler)));
 ;// CONCATENATED MODULE: ./src/components/homepage/skillsBar.js
 
 
 var SkillsBar = function SkillsBar(props) {
   var buildSkillsBar = function buildSkillsBar(skill) {
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       key: skill.index,
       className: "SkillsBar"
-    }, /*#__PURE__*/react.createElement(filler, {
+    }, /*#__PURE__*/React.createElement(Filler, {
       skill: skill
     }));
   };
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "SkillsBarContainer"
   }, props.skills.map(buildSkillsBar));
 };
-/* harmony default export */ const skillsBar = (SkillsBar);
+/* harmony default export */ const skillsBar = ((/* unused pure expression or super */ null && (SkillsBar)));
+// EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
+var dist = __webpack_require__(2112);
 ;// CONCATENATED MODULE: ./src/components/homepage/homepage.js
+
+
 
 
 
@@ -304,9 +292,6 @@ var Homepage = function Homepage(props) {
     _useState4 = (0,slicedToArray/* default */.c)(_useState3, 2),
     hexagons = _useState4[0],
     setHexagons = _useState4[1];
-  (0,react.useEffect)(function () {
-    dispatch((0,website/* getSkills */.Bw)());
-  }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: "Homepage"
   }, /*#__PURE__*/react.createElement("div", {
@@ -317,7 +302,7 @@ var Homepage = function Homepage(props) {
     className: "hero-content"
   }, /*#__PURE__*/react.createElement("div", {
     className: "content-wrapper"
-  }, /*#__PURE__*/react.createElement("h4", null, "Hello!"), /*#__PURE__*/react.createElement("h1", null, "Pratik Mathur"), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement("h4", null, "Hello! My name is"), /*#__PURE__*/react.createElement("h1", null, "Pratik Mathur"), /*#__PURE__*/react.createElement("div", {
     className: "hero"
   }, /*#__PURE__*/react.createElement("div", {
     className: "static-text"
@@ -328,12 +313,48 @@ var Homepage = function Homepage(props) {
     repeat: Infinity
   })), /*#__PURE__*/react.createElement("div", {
     className: "description"
-  }, /*#__PURE__*/react.createElement("p", null, "I\u2019m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. I have a passion for creating intuitive, dynamic and cross-platform user experiences.")))), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement("p", null, "I\u2019m a software engineer specializing in building and designing exceptional digital experiences. I have a passion for creating intuitive, dynamic and cross-platform user experiences.")))), /*#__PURE__*/react.createElement("div", {
     className: "my-image"
   }, /*#__PURE__*/react.createElement("img", {
     src: "/images/photo.jpg",
     alt: "My Image"
   }))), /*#__PURE__*/react.createElement("div", {
+    className: "social-icons-wrapper"
+  }, /*#__PURE__*/react.createElement(footerImage/* default */.c, {
+    icon: "AiFillLinkedin",
+    size: "32",
+    color: "white",
+    alt: "LinkedIn",
+    url: "https://www.linkedin.com/in/pratik-mathur/",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(footerImage/* default */.c, {
+    icon: "AiFillGithub",
+    size: "32",
+    color: "white",
+    alt: "Github",
+    url: "https://github.com/pratikmathur279",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(footerImage/* default */.c, {
+    icon: "AiOutlineInstagram",
+    size: "32",
+    color: "white",
+    alt: "Instagram",
+    url: "https://www.instagram.com/pratikmathur279/",
+    target: "_blank"
+  }), /*#__PURE__*/react.createElement(footerImage/* default */.c, {
+    icon: "AiOutlineMail",
+    size: "32",
+    color: "white",
+    alt: "E-Mail",
+    url: "mailto:pratikmathur279@gmail.com"
+  }), /*#__PURE__*/react.createElement(footerImage/* default */.c, {
+    icon: "FaWhatsapp",
+    size: "32",
+    color: "white",
+    alt: "E-Mail",
+    url: "https://wa.me/7039815938",
+    target: "_blank"
+  })), /*#__PURE__*/react.createElement("div", {
     className: "hero-mouse"
   }, /*#__PURE__*/react.createElement("div", {
     className: "mouse"
@@ -348,21 +369,41 @@ var Homepage = function Homepage(props) {
     src: "/images/backgrounds/Web-Dev.jpg"
   })), /*#__PURE__*/react.createElement("div", {
     className: "description"
-  }, /*#__PURE__*/react.createElement("h1", null, "My passion and focus is web development"), /*#__PURE__*/react.createElement("p", null, "I'm passionate about web development and bringing ideas to life. My primary focus is to build robust web applications and software applications by building a great user experience. If you want to learn more about me, pick up the phone and give me a call (or email).")))), /*#__PURE__*/react.createElement(homepage_hexagons, {
+  }, /*#__PURE__*/react.createElement("h1", null, "My passion and focus is web development"), /*#__PURE__*/react.createElement("p", null, "I'm a passionate software developer driven by turning ideas into reality. I focus on crafting robust web applications and software that prioritizes a fantastic user experience. In my work, I take great pride in:"), /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Bringing ideas to life:"), " I love collaborating and transforming concepts into user-friendly applications."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Building robust applications:"), " I strive to create reliable and secure software that can stand the test of time."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Exceptional user experience (UX):"), " At the heart of everything I do is a focus on making applications intuitive and enjoyable to use.")), /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("p", null, "Want to learn more about how I can help you achieve your development goals?", " ", /*#__PURE__*/react.createElement(dist/* Link */.cH, {
+    to: "/contact"
+  }, "Don't hesitate to reach out!"))))), /*#__PURE__*/react.createElement(homepage_hexagons, {
     hexagons: hexagons
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "intro-skills-wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "IntroContainer"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "Description"
-  }, /*#__PURE__*/react.createElement("p", null, "Since beginning my journey as a software developer over 6 years ago, I've done remote work for a few startups, and collaborated with talented people to create digital products for both business and consumer use."), /*#__PURE__*/react.createElement("p", null, "After years in the industry, and having gone through multiple opportunities, some good, and some bad, I am in the process of widening my range of knowledge and improving my skillset in Software Development. So, here I am years later still doing the same thing, and still loving it."))), /*#__PURE__*/react.createElement("div", {
-    className: "SkillsContainer"
-  }, /*#__PURE__*/react.createElement(skillsBar, {
-    skills: skills
-  }))));
+  }));
 };
 /* harmony default export */ const homepage = (Homepage);
+
+/***/ }),
+
+/***/ 5048:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   c: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6952);
+/* harmony import */ var _common_reactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
+
+
+var FooterImage = function FooterImage(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "footerImage"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: props.url,
+    target: props.target
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_common_reactIcons__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .c, {
+    id: "CustomTag",
+    size: props.size,
+    color: props.color,
+    icon: props.icon,
+    background: "#fff"
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FooterImage);
 
 /***/ })
 
