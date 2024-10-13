@@ -8,6 +8,7 @@ services:
     ports:
       - "3010:3010"
     environment:
+      - AWS_SDK_LOAD_CONFIG=1
       - NODE_ENV=${NODE_ENV:-production} # Default to production if NODE_ENV is not set
     volumes:
       - .:/app

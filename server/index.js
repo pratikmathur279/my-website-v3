@@ -76,7 +76,7 @@ app.get("/api", (req, res) => {
 });
 
 app.listen(PORT, () => {
-	console.log(`Server listening on ${PORT}`);
+	console.log(`Server listening on ${PORT}.`);
 });
 
 // All other GET requests not handled before will return our React app

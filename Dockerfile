@@ -1,0 +1,41 @@
+# Stage 1: Build (for building assets and production-ready code)
+FROM node:18-slim AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json to install dependencies
+COPY package.json package-lock.json ./
+
+# Install all dependencies (including devDependencies for build)
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build client assets (webpack) and compile SCSS
+RUN npm run prod:js && npm run prod:scss
+
+# Stage 2: Production (only runtime environment)
+FROM node:18-slim
+
+# Set working directory for the final container
+WORKDIR /app
+
+# Copy only the necessary files from the build stage
+COPY package.json package-lock.json ./
+
+COPY .env .env
+
+# Install only production dependencies
+RUN npm install --only=production
+
+# Copy over the server code and built client assets from the build stage
+COPY --from=build /app/server /app/server
+COPY --from=build /app/client/public /app/client/public
+
+# Expose the port for the app
+EXPOSE 3010
+
+# Start the server
+CMD ["npm", "run", "prod:server"]
