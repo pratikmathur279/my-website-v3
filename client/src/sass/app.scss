@@ -391,7 +391,7 @@ a {
 			width: min($contentMaxWidth, 100%);
 			column-gap: 60px;
 			row-gap: 30px;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: center;
 			margin: 0 auto;
 			flex-wrap: wrap;
@@ -408,13 +408,16 @@ a {
 			.description {
 				flex: 1 0 40%;
 				color: $darkblue;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
 
 				h1 {
 					font-size: 2.4em;
 				}
 
-				li {
-					margin-left: 16px;
+				ul {
+					padding-left: 30px;
 				}
 			}
 
@@ -1565,5 +1568,16 @@ a {
 				}
 			}
 		}
+	}
+}
+
+.property-gallery-wrapper {
+
+	h3 {
+		color: $darkblue;
+	}
+
+	#gallery {
+		width: 100%;
 	}
 }

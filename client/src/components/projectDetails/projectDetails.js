@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 
 import Parser from "html-react-parser";
+import Gallery from "../../common/gallery";
 
 const ProjectDetails = (props) => {
 	const [project, setProject] = useState(null);
@@ -57,6 +58,10 @@ const ProjectDetails = (props) => {
 							<h3>Project Overview</h3>
 							<div className="description">{Parser(project.description)}</div>
 						</div>
+
+						{project.gallery && project.gallery.length > 0 && (
+							<Gallery photos={project.gallery} />
+						)}
 
 						{project.technologies && (
 							<div className="technology-wrapper container">

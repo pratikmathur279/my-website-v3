@@ -144,7 +144,6 @@ const Homepage = (props) => {
 							that prioritizes a fantastic user experience. In my work, I take
 							great pride in:
 						</p>
-						<br />
 						<ul>
 							<li>
 								<b>Bringing ideas to life:</b> I love collaborating and
@@ -161,7 +160,6 @@ const Homepage = (props) => {
 							</li>
 						</ul>
 
-						<br />
 						<p>
 							Want to learn more about how I can help you achieve your
 							development goals?{" "}
