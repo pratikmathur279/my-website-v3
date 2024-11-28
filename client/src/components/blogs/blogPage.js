@@ -3,6 +3,18 @@ import React, { useState, useEffect } from "react";
 const BlogPage = (props) => {
 	const [blogs, setBlogs] = useState([
 		{
+			url: "https://medium.com/@pratikmathur279/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04-9f827d3b1578",
+			header: "How To Configure Nginx as a Reverse Proxy on Ubuntu 22.04",
+			image_url:
+				"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LjPjmpQ9L362dzRbh5ydAQ.jpeg",
+		},
+		{
+			url: "https://medium.com/@pratikmathur279/how-to-build-a-responsive-iframe-using-postmessage-60b33ffa860f",
+			header: "How to build a responsive iframe using postMessage",
+			image_url:
+				"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ofCDJfZW2C-W44YBlu44Bw.png",
+		},
+		{
 			url: "https://hackernoon.com/9-javascript-design-patters-you-will-love",
 			header: "9 JavaScript Design Patterns You Will Love",
 			image: "KmNf0Wo4w4avMoWS6xST2YLQABu2-xh9304q.jpg",
@@ -56,11 +68,16 @@ const BlogPage = (props) => {
 	]);
 
 	const buildBlogs = (b) => {
+		let imageUrl = `/images/blogs/${b.image}`;
+		if (b.image_url) {
+			imageUrl = b.image_url;
+		}
+
 		return (
 			<div id="blog">
 				<a href={b.url} target="_blank">
 					<div className="image-container">
-						<img src={`/images/blogs/${b.image}`} />
+						<img src={imageUrl} />
 					</div>
 
 					<h3>{b.header}</h3>

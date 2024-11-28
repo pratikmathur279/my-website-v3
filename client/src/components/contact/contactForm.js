@@ -23,8 +23,8 @@ const ContactForm = (props) => {
 					I'll get back to you as soon as possible.
 				</h3>
 
-				<a href="mailto:pratikmathur279@gmail.com" className="email">
-					pratikmathur279@gmail.com
+				<a href="mailto:hello@pratikmathur.com" className="email">
+					hello@pratikmathur.com
 				</a>
 
 				<a href="tel:7039815938">703-981-5938</a>

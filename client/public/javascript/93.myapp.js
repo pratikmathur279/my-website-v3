@@ -72,6 +72,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var BlogPage = function BlogPage(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+      url: "https://medium.com/@pratikmathur279/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04-9f827d3b1578",
+      header: "How To Configure Nginx as a Reverse Proxy on Ubuntu 22.04",
+      image_url: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LjPjmpQ9L362dzRbh5ydAQ.jpeg"
+    }, {
+      url: "https://medium.com/@pratikmathur279/how-to-build-a-responsive-iframe-using-postmessage-60b33ffa860f",
+      header: "How to build a responsive iframe using postMessage",
+      image_url: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ofCDJfZW2C-W44YBlu44Bw.png"
+    }, {
       url: "https://hackernoon.com/9-javascript-design-patters-you-will-love",
       header: "9 JavaScript Design Patterns You Will Love",
       image: "KmNf0Wo4w4avMoWS6xST2YLQABu2-xh9304q.jpg"
@@ -116,6 +124,10 @@ var BlogPage = function BlogPage(props) {
     blogs = _useState2[0],
     setBlogs = _useState2[1];
   var buildBlogs = function buildBlogs(b) {
+    var imageUrl = "/images/blogs/".concat(b.image);
+    if (b.image_url) {
+      imageUrl = b.image_url;
+    }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       id: "blog"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
@@ -124,7 +136,7 @@ var BlogPage = function BlogPage(props) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "image-container"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: "/images/blogs/".concat(b.image)
+      src: imageUrl
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, b.header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
       className: "read-more"
     }, "Read more")));

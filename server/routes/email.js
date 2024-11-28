@@ -6,7 +6,7 @@ import { v4 as uuid } from "uuid";
 
 import AWS from "aws-sdk";
 const ses = new AWS.SES();
-const myEmail = "pratikmathur279@gmail.com";
+const myEmail = "hello@pratikmathur.com";
 const myDomain = "www.pratikmathur.com";
 
 AWS.config.update({

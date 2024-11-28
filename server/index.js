@@ -10,7 +10,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import express from "express";
 
-import config from "./config/config.js";
+import dotenv from "dotenv";
+dotenv.config();
+console.log(process.env.AWS_ACCESS_KEY_ID);
 
 // import routes
 import projectsRouter from "./routes/projects.js";

@@ -38,7 +38,7 @@ const Footer = (props) => {
 						size="32"
 						color="white"
 						alt="E-Mail"
-						url="mailto:pratikmathur279@gmail.com"
+						url="mailto:hello@pratikmathur.com"
 					/>
 					<FooterImage
 						icon="FaWhatsapp"

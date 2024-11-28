@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[500],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[592],{
 
 /***/ 4799:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -167,7 +167,7 @@ var ReactIcons = function ReactIcons(_ref) {
 
 /***/ }),
 
-/***/ 5500:
+/***/ 9592:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -194,26 +194,26 @@ var reactIcons = __webpack_require__(56);
 
 var Hexagons = function Hexagons(props) {
   var buildList = function buildList(hex) {
-    return /*#__PURE__*/react.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       key: hex.id,
       className: "AlignHexagon"
-    }, /*#__PURE__*/react.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "Hexagon"
-    }, /*#__PURE__*/react.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "Icons"
-    }, /*#__PURE__*/react.createElement(reactIcons/* default */.c, {
+    }, /*#__PURE__*/React.createElement(ReactIcons, {
       key: hex.id,
       icon: hex.name,
       size: 60
-    }))), /*#__PURE__*/react.createElement("h3", null, hex.title), /*#__PURE__*/react.createElement("p", null, hex.desc));
+    }))), /*#__PURE__*/React.createElement("h3", null, hex.title), /*#__PURE__*/React.createElement("p", null, hex.desc));
   };
-  return /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "HexagonsContainer"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "hexagons-wrapper"
   }, props.hexagons.map(buildList)));
 };
-/* harmony default export */ const homepage_hexagons = (Hexagons);
+/* harmony default export */ const hexagons = ((/* unused pure expression or super */ null && (Hexagons)));
 // EXTERNAL MODULE: ./src/components/layout/footerImage.js
 var footerImage = __webpack_require__(5048);
 ;// CONCATENATED MODULE: ./src/components/homepage/filler.js
@@ -248,7 +248,50 @@ var SkillsBar = function SkillsBar(props) {
 /* harmony default export */ const skillsBar = ((/* unused pure expression or super */ null && (SkillsBar)));
 // EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
 var dist = __webpack_require__(2112);
+;// CONCATENATED MODULE: ./src/components/myExpertise/my-expertise.js
+
+
+var MyExpertise = function MyExpertise() {
+  var _useState = (0,react.useState)([{
+      title: "Web Design & Development",
+      description: "Custom websites blending function and aesthetics with cutting-edge technology for unique online experiences. "
+    }, {
+      title: "System Optimization",
+      description: "Revamping existing systems, improving efficiency and reducing costs through innovative code solutions. "
+    }, {
+      title: "Mobile App Development",
+      description: "Mobile apps tailored for engaging, user-friendly experiences that meet modern digital demands."
+    }, {
+      title: "Enterprise Solutions",
+      description: "Enterprise-level software that scales with business needs, providing reliability and performance. "
+    }, {
+      title: "SEO Boost",
+      description: "Comprehensive SEO services to enhance digital presence and improve website rankings effectively."
+    }, {
+      title: "AI Integration",
+      description: "Leveraging AI for personalized tech solutions, improving user interaction and predictive capabilities."
+    }]),
+    _useState2 = (0,slicedToArray/* default */.c)(_useState, 2),
+    expertise = _useState2[0],
+    setExpertise = _useState2[1];
+  return /*#__PURE__*/react.createElement("div", {
+    className: "flex-container-lg "
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "my-expertise-wrapper"
+  }, /*#__PURE__*/react.createElement("h1", null, "My Expertise"), /*#__PURE__*/react.createElement("div", {
+    className: "my-expertise-container"
+  }, expertise.map(function (item, index) {
+    return /*#__PURE__*/react.createElement("div", {
+      key: index,
+      className: "item"
+    }, /*#__PURE__*/react.createElement("p", {
+      className: "index"
+    }, (index + 1).toString().padStart(2, "0")), /*#__PURE__*/react.createElement("h3", null, item.title), /*#__PURE__*/react.createElement("p", null, item.description));
+  }))));
+};
+/* harmony default export */ const my_expertise = (MyExpertise);
 ;// CONCATENATED MODULE: ./src/components/homepage/homepage.js
+
 
 
 
@@ -263,7 +306,9 @@ var Homepage = function Homepage(props) {
   var _useSelector = (0,es/* useSelector */.w1)(function (state) {
       return state.GlobalReducer;
     }),
-    skills = _useSelector.skills;
+    skills = _useSelector.skills,
+    experience = _useSelector.experience,
+    education = _useSelector.education;
   var _useState = (0,react.useState)(false),
     _useState2 = (0,slicedToArray/* default */.c)(_useState, 2),
     isFlipped = _useState2[0],
@@ -292,6 +337,28 @@ var Homepage = function Homepage(props) {
     _useState4 = (0,slicedToArray/* default */.c)(_useState3, 2),
     hexagons = _useState4[0],
     setHexagons = _useState4[1];
+  var buildExperiences = function buildExperiences(exp) {
+    var fromYear = new Date(exp.from).getFullYear();
+    return /*#__PURE__*/react.createElement("div", {
+      key: exp.id,
+      className: "experience"
+    }, /*#__PURE__*/react.createElement("div", {
+      className: "sphere"
+    }, /*#__PURE__*/react.createElement("p", null, fromYear)), /*#__PURE__*/react.createElement("div", {
+      className: "content"
+    }, /*#__PURE__*/react.createElement("h4", null, exp.name), /*#__PURE__*/react.createElement("p", null, exp.description)));
+  };
+  var buildEducation = function buildEducation(edu) {
+    var fromYear = new Date(edu.from).getFullYear();
+    return /*#__PURE__*/react.createElement("div", {
+      key: edu.id,
+      className: "experience"
+    }, /*#__PURE__*/react.createElement("div", {
+      className: "sphere"
+    }, /*#__PURE__*/react.createElement("p", null, fromYear)), /*#__PURE__*/react.createElement("div", {
+      className: "content"
+    }, /*#__PURE__*/react.createElement("h4", null, edu.institution), /*#__PURE__*/react.createElement("p", null, edu.course)));
+  };
   return /*#__PURE__*/react.createElement("div", {
     className: "Homepage"
   }, /*#__PURE__*/react.createElement("div", {
@@ -307,7 +374,7 @@ var Homepage = function Homepage(props) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "static-text"
   }, "I'm a"), /*#__PURE__*/react.createElement(m, {
-    sequence: ["Developer.", 1500, "Designer.", 1500, "Gamer.", 1500, "Freelancer.", 1500],
+    sequence: ["Developer.", 1500, "Technophile.", 1500, "Gamer.", 1500, "Freelancer.", 1500, "AI Enthusiast.", 1500],
     speed: 30,
     wrapper: "span",
     repeat: Infinity
@@ -346,7 +413,7 @@ var Homepage = function Homepage(props) {
     size: "32",
     color: "white",
     alt: "E-Mail",
-    url: "mailto:pratikmathur279@gmail.com"
+    url: "mailto:hello@pratikmathur.com"
   }), /*#__PURE__*/react.createElement(footerImage/* default */.c, {
     icon: "FaWhatsapp",
     size: "32",
@@ -371,9 +438,17 @@ var Homepage = function Homepage(props) {
     className: "description"
   }, /*#__PURE__*/react.createElement("h1", null, "My passion and focus is web development"), /*#__PURE__*/react.createElement("p", null, "I'm a passionate software developer driven by turning ideas into reality. I focus on crafting robust web applications and software that prioritizes a fantastic user experience. In my work, I take great pride in:"), /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Bringing ideas to life:"), " I love collaborating and transforming concepts into user-friendly applications."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Building robust applications:"), " I strive to create reliable and secure software that can stand the test of time."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Exceptional user experience (UX):"), " At the heart of everything I do is a focus on making applications intuitive and enjoyable to use.")), /*#__PURE__*/react.createElement("p", null, "Want to learn more about how I can help you achieve your development goals?", " ", /*#__PURE__*/react.createElement(dist/* Link */.cH, {
     to: "/contact"
-  }, "Don't hesitate to reach out!"))))), /*#__PURE__*/react.createElement(homepage_hexagons, {
-    hexagons: hexagons
-  }));
+  }, "Don't hesitate to reach out!"))))), /*#__PURE__*/react.createElement(my_expertise, null), /*#__PURE__*/react.createElement("div", {
+    className: "flex-container-lg experience-education-wrapper"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "experience-wrapper"
+  }, /*#__PURE__*/react.createElement("h2", null, "Experiences"), /*#__PURE__*/react.createElement("div", {
+    className: "wrapper"
+  }, experience.map(buildExperiences))), /*#__PURE__*/react.createElement("div", {
+    className: "experience-wrapper"
+  }, /*#__PURE__*/react.createElement("h2", null, "Education"), /*#__PURE__*/react.createElement("div", {
+    className: "wrapper"
+  }, education.map(buildEducation)))));
 };
 /* harmony default export */ const homepage = (Homepage);
 
@@ -408,4 +483,4 @@ var FooterImage = function FooterImage(props) {
 /***/ })
 
 }]);
-//# sourceMappingURL=500.myapp.js.map
+//# sourceMappingURL=592.myapp.js.map

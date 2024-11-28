@@ -8,10 +8,13 @@ import FooterImage from "../layout/footerImage";
 import { getSkills } from "../../actions/website.js";
 import SkillsBar from "./skillsBar";
 import { Link } from "react-router-dom";
+import MyExpertise from "../myExpertise/my-expertise.js";
 
 const Homepage = (props) => {
 	const dispatch = useDispatch();
-	const { skills } = useSelector((state) => state.GlobalReducer);
+	const { skills, experience, education } = useSelector(
+		(state) => state.GlobalReducer
+	);
 
 	const [isFlipped, setIsFlipped] = useState(false);
 	const [hexagons, setHexagons] = useState([
@@ -41,6 +44,36 @@ const Homepage = (props) => {
 		},
 	]);
 
+	const buildExperiences = (exp) => {
+		const fromYear = new Date(exp.from).getFullYear();
+		return (
+			<div key={exp.id} className="experience">
+				<div className="sphere">
+					<p>{fromYear}</p>
+				</div>
+				<div className="content">
+					<h4>{exp.name}</h4>
+					<p>{exp.description}</p>
+				</div>
+			</div>
+		);
+	};
+
+	const buildEducation = (edu) => {
+		const fromYear = new Date(edu.from).getFullYear();
+		return (
+			<div key={edu.id} className="experience">
+				<div className="sphere">
+					<p>{fromYear}</p>
+				</div>
+				<div className="content">
+					<h4>{edu.institution}</h4>
+					<p>{edu.course}</p>
+				</div>
+			</div>
+		);
+	};
+
 	return (
 		<div className="Homepage">
 			<div className="HomepageContainer">
@@ -56,11 +89,13 @@ const Homepage = (props) => {
 									sequence={[
 										"Developer.",
 										1500,
-										"Designer.",
+										"Technophile.",
 										1500,
 										"Gamer.",
 										1500,
 										"Freelancer.",
+										1500,
+										"AI Enthusiast.",
 										1500,
 									]}
 									speed={30}
@@ -113,7 +148,7 @@ const Homepage = (props) => {
 						size="32"
 						color="white"
 						alt="E-Mail"
-						url="mailto:pratikmathur279@gmail.com"
+						url="mailto:hello@pratikmathur.com"
 					/>
 					<FooterImage
 						icon="FaWhatsapp"
@@ -169,7 +204,21 @@ const Homepage = (props) => {
 				</div>
 			</div>
 
-			<Hexagons hexagons={hexagons} />
+			<MyExpertise />
+
+			{/* <Hexagons hexagons={hexagons} /> */}
+
+			<div className="flex-container-lg experience-education-wrapper">
+				<div className="experience-wrapper">
+					<h2>Experiences</h2>
+					<div className="wrapper">{experience.map(buildExperiences)}</div>
+				</div>
+
+				<div className="experience-wrapper">
+					<h2>Education</h2>
+					<div className="wrapper">{education.map(buildEducation)}</div>
+				</div>
+			</div>
 
 			{/* <div className="intro-skills-wrapper">
 				<div className="IntroContainer">

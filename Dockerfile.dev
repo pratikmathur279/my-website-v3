@@ -1,5 +1,5 @@
 # Use a lightweight Node.js image
-FROM node:18-slim
+FROM node:20-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -10,10 +10,10 @@ COPY package.json package-lock.json ./
 # Install dependencies
 RUN npm install
 
-COPY .env .env
-
 # Copy the rest of the app code
 COPY . .
+
+COPY /server/.env /server/.env
 
 # Expose the port the app runs on
 EXPOSE 3010

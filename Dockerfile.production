@@ -1,5 +1,5 @@
 # Stage 1: Build (for building assets and production-ready code)
-FROM node:18-slim AS build
+FROM node:20-slim AS build
 
 # Set working directory
 WORKDIR /app
@@ -13,11 +13,12 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build client assets (webpack) and compile SCSS
-RUN npm run prod:js && npm run prod:scss
+# # Build client assets (webpack) and compile SCSS
+#  MOVED TO PACKAGE SCRIPT
+# RUN npm run prod:js && npm run prod:scss
 
 # Stage 2: Production (only runtime environment)
-FROM node:18-slim
+FROM node:20-slim
 
 # Set working directory for the final container
 WORKDIR /app
@@ -25,7 +26,7 @@ WORKDIR /app
 # Copy only the necessary files from the build stage
 COPY package.json package-lock.json ./
 
-COPY .env .env
+COPY /server/.env /server/.env
 
 # Install only production dependencies
 RUN npm install --only=production

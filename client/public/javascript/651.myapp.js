@@ -91,9 +91,9 @@ var ContactForm = function ContactForm(props) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "contact-left-container"
   }, /*#__PURE__*/react.createElement("h2", null, "Let's talk."), /*#__PURE__*/react.createElement("h3", null, "Have a question or want to work together? Fill in the form below and I'll get back to you as soon as possible."), /*#__PURE__*/react.createElement("a", {
-    href: "mailto:pratikmathur279@gmail.com",
+    href: "mailto:hello@pratikmathur.com",
     className: "email"
-  }, "pratikmathur279@gmail.com"), /*#__PURE__*/react.createElement("a", {
+  }, "hello@pratikmathur.com"), /*#__PURE__*/react.createElement("a", {
     href: "tel:7039815938"
   }, "703-981-5938"), /*#__PURE__*/react.createElement("div", {
     className: "map-container"

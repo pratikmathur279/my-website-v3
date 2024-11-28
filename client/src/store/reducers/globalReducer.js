@@ -6,6 +6,23 @@ let initialState = {
 	experience: [],
 	technology: [],
 	projects: [],
+	education: [
+		{
+			id: uuidv4(),
+			institution: "George Mason University",
+			course: "Masters of Science in Information Systems",
+			from: "August 2015",
+			to: "May 2017",
+		},
+		{
+			id: uuidv4(),
+			institution: "Jawaharlal Nehru Technological University, Hyderabad",
+			course:
+				"Bachelor of Technology (B. Tech) in Computer Science and Engineering",
+			from: "June 2011",
+			to: "July 2015",
+		},
+	],
 };
 
 const GlobalReducer = (state = initialState, action) => {

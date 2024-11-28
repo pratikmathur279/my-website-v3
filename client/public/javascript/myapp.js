@@ -28862,7 +28862,7 @@ var Footer = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 472).then(__webpack_require__.bind(__webpack_require__, 9472));
 });
 var Homepage = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 500).then(__webpack_require__.bind(__webpack_require__, 5500));
+  return __webpack_require__.e(/* import() */ 592).then(__webpack_require__.bind(__webpack_require__, 9592));
 });
 var AboutPage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 832).then(__webpack_require__.bind(__webpack_require__, 832));
@@ -31885,6 +31885,94 @@ function _toConsumableArray(arr) {
 }
 // EXTERNAL MODULE: ../node_modules/lodash/lodash.js
 var lodash = __webpack_require__(7168);
+;// CONCATENATED MODULE: ../node_modules/uuid/dist/esm-browser/native.js
+const randomUUID = typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+/* harmony default export */ const esm_browser_native = ({
+  randomUUID
+});
+;// CONCATENATED MODULE: ../node_modules/uuid/dist/esm-browser/rng.js
+// Unique ID creation requires a high quality random # generator. In the browser we therefore
+// require the crypto API and do not support built-in fallback to lower quality random number
+// generators (like Math.random()).
+let getRandomValues;
+const rnds8 = new Uint8Array(16);
+function rng() {
+  // lazy load so that environments that need to polyfill have a chance to do so
+  if (!getRandomValues) {
+    // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation.
+    getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
+
+    if (!getRandomValues) {
+      throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
+    }
+  }
+
+  return getRandomValues(rnds8);
+}
+;// CONCATENATED MODULE: ../node_modules/uuid/dist/esm-browser/stringify.js
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+
+const byteToHex = [];
+
+for (let i = 0; i < 256; ++i) {
+  byteToHex.push((i + 0x100).toString(16).slice(1));
+}
+
+function unsafeStringify(arr, offset = 0) {
+  // Note: Be careful editing this code!  It's been tuned for performance
+  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+  return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
+}
+
+function stringify(arr, offset = 0) {
+  const uuid = unsafeStringify(arr, offset); // Consistency check for valid UUID.  If this throws, it's likely due to one
+  // of the following:
+  // - One or more input array values don't map to a hex octet (leading to
+  // "undefined" in the uuid)
+  // - Invalid input values for the RFC `version` or `variant` fields
+
+  if (!validate(uuid)) {
+    throw TypeError('Stringified UUID is invalid');
+  }
+
+  return uuid;
+}
+
+/* harmony default export */ const esm_browser_stringify = ((/* unused pure expression or super */ null && (stringify)));
+;// CONCATENATED MODULE: ../node_modules/uuid/dist/esm-browser/v4.js
+
+
+
+
+function v4(options, buf, offset) {
+  if (esm_browser_native.randomUUID && !buf && !options) {
+    return esm_browser_native.randomUUID();
+  }
+
+  options = options || {};
+  const rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+
+  rnds[6] = rnds[6] & 0x0f | 0x40;
+  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+
+  if (buf) {
+    offset = offset || 0;
+
+    for (let i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+
+    return buf;
+  }
+
+  return unsafeStringify(rnds);
+}
+
+/* harmony default export */ const esm_browser_v4 = (v4);
 ;// CONCATENATED MODULE: ./src/store/reducers/globalReducer.js
 
 
@@ -31896,7 +31984,20 @@ var initialState = {
   skills: [],
   experience: [],
   technology: [],
-  projects: []
+  projects: [],
+  education: [{
+    id: esm_browser_v4(),
+    institution: "George Mason University",
+    course: "Masters of Science in Information Systems",
+    from: "August 2015",
+    to: "May 2017"
+  }, {
+    id: esm_browser_v4(),
+    institution: "Jawaharlal Nehru Technological University, Hyderabad",
+    course: "Bachelor of Technology (B. Tech) in Computer Science and Engineering",
+    from: "June 2011",
+    to: "July 2015"
+  }]
 };
 var GlobalReducer = function GlobalReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -32476,7 +32577,7 @@ function onGetSkills() {
   }, _marked, null, [[0, 10]]);
 }
 function onGetExperience() {
-  var response, data, i, temp;
+  var response, data, i;
   return regenerator.wrap(function onGetExperience$(_context2) {
     while (1) switch (_context2.prev = _context2.next) {
       case 0:
@@ -32487,9 +32588,6 @@ function onGetExperience() {
         response = _context2.sent;
         data = response.data;
         for (i in data) {
-          temp = data[i].responsibilities;
-          temp = temp.split(";");
-          data[i].responsibilities = temp;
           if (i == data.length - 1) {
             data.sort(function (a, b) {
               return a.index > b.index ? 1 : -1;

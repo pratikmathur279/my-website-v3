@@ -212,7 +212,7 @@ var Footer = function Footer(props) {
     size: "32",
     color: "white",
     alt: "E-Mail",
-    url: "mailto:pratikmathur279@gmail.com"
+    url: "mailto:hello@pratikmathur.com"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_footerImage__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .c, {
     icon: "FaWhatsapp",
     size: "32",

@@ -39,8 +39,6 @@ const ResumePage = (props) => {
 			<div className="page-content-wrapper">
 				<WorkExperience experience={experience} technology={technology} />
 
-				{/* <Education /> */}
-
 				<div className="latest-projects-wrapper">
 					<div className="Section">
 						<div className="header">
