@@ -9,7 +9,10 @@ const AboutPage = (props) => {
 		<div className="about-page-wrapper">
 			<div className="hero-wrapper">
 				<div className="hero-container">
-					<h3>My Passions & Personality</h3>
+					<h3>
+						My Passions & <br />
+						Personality
+					</h3>
 				</div>
 
 				<div className="hero-mouse">
@@ -25,39 +28,38 @@ const AboutPage = (props) => {
 
 					<div className="content-row">
 						<p>
-							I'm a full-stack software developer with a passion for building
-							innovative digital products. Since the age of 13, when I was first
-							introduced to the world of web development through HTML and CSS,
-							my journey has been fueled by a desire to learn and grow. My
-							Bachelor's and Master's degrees in Computer Science further
-							solidified my foundation and broadened my knowledge.
+							I’m a full-stack software developer passionate about creating
+							innovative digital products. My journey into programming began at
+							the age of 13, building web pages with HTML and CSS. Over the
+							years, that spark evolved into a deep commitment to continuous
+							learning and crafting impactful solutions.
 						</p>
 						<p>
-							Throughout my {yearsExp}+ years of experience, I've thrived in
-							remote environments, collaborating with talented individuals on
-							projects for both businesses and consumers. Embracing diverse
-							opportunities, both successes and challenges, has fueled my drive
-							to continuously expand my skillset and refine my approach to
-							software development. Even after years in the field, my enthusiasm
-							for crafting solutions through code remains undimmed.
+							With a Bachelor’s and Master’s degree in Computer Science, I’ve
+							built a strong technical foundation and a versatile skill set. For
+							over {yearsExp} years, I’ve thrived in remote, collaborative
+							environments, working on diverse projects for businesses and
+							consumers alike. Each experience—whether a success or a
+							challenge—has sharpened my abilities and broadened my perspective
+							on software development.
 						</p>
 						<p>
-							I'm a constant learner, always seeking to improve my abilities. In
-							my spare time, I leverage online resources like Udemy and Coursera
-							to explore new web technologies and dive headfirst into unfamiliar
-							projects.
+							I’m a lifelong learner who eagerly embraces new challenges. In my
+							free time, I explore cutting-edge web technologies and tackle
+							unfamiliar projects through platforms like Udemy and Coursera.
 						</p>
 						<p>
-							When I'm not coding, you might find me on the soccer field,
-							playing video games, or exploring the world of new programming
-							languages.
+							When I’m not coding, I enjoy playing soccer, diving into video
+							games, or experimenting with new programming languages just for
+							fun.
 						</p>
 						<p>
-							I'm open to job opportunities that allow me to contribute my
-							skills, learn from talented colleagues, and continue my
-							professional growth. If you have a role that matches my
-							qualifications, please don't hesitate to contact me.
+							I’m always open to new opportunities that align with my skills and
+							passion for growth. If you’re looking for a developer who can
+							deliver impactful solutions while continuously evolving, feel free
+							to reach out—I’d love to connect!
 						</p>
+
 						<Link to="/contact" className="btn secondary">
 							Contact Me
 						</Link>

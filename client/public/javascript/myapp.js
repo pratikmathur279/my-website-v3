@@ -28862,7 +28862,7 @@ var Footer = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 472).then(__webpack_require__.bind(__webpack_require__, 9472));
 });
 var Homepage = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 592).then(__webpack_require__.bind(__webpack_require__, 9592));
+  return Promise.all(/* import() */[__webpack_require__.e(895), __webpack_require__.e(88)]).then(__webpack_require__.bind(__webpack_require__, 1088));
 });
 var AboutPage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 832).then(__webpack_require__.bind(__webpack_require__, 832));
@@ -28880,7 +28880,7 @@ var ProjectsPage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 208).then(__webpack_require__.bind(__webpack_require__, 1208));
 });
 var ProjectDetails = /*#__PURE__*/(0,react.lazy)(function () {
-  return Promise.all(/* import() */[__webpack_require__.e(964), __webpack_require__.e(572)]).then(__webpack_require__.bind(__webpack_require__, 5572));
+  return Promise.all(/* import() */[__webpack_require__.e(964), __webpack_require__.e(436)]).then(__webpack_require__.bind(__webpack_require__, 1436));
 });
 var App = function App(props) {
   var dispatch = (0,es/* useDispatch */.OY)();

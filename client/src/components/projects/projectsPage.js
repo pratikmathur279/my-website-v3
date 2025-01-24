@@ -73,7 +73,7 @@ const ProjectsPage = (props) => {
 		<div className="projects-wrapper">
 			<div className="hero-wrapper">
 				<div className="hero-container">
-					<h3 className="ProjectsHeader">Projects</h3>
+					<h3 className="ProjectsHeader">My Projects</h3>
 					<div className="download">
 						<a onClick={() => scrollToAllProjects()}>
 							<span>View All</span>

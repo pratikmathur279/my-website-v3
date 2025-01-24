@@ -1,5 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+import { motion, useInView } from "framer-motion";
 
 import { TypeAnimation } from "react-type-animation";
 import Hexagons from "./hexagons";
@@ -10,11 +12,23 @@ import SkillsBar from "./skillsBar";
 import { Link } from "react-router-dom";
 import MyExpertise from "../myExpertise/my-expertise.js";
 
+import LazyLoadImg from "../common/lazyloadImg.js";
+
 const Homepage = (props) => {
 	const dispatch = useDispatch();
 	const { skills, experience, education } = useSelector(
 		(state) => state.GlobalReducer
 	);
+
+	// Animation Variants
+	const slideUp = {
+		hidden: { opacity: 0, y: 50 },
+		visible: { opacity: 1, y: 0 },
+	};
+
+	// In-view logic
+	const headingRef = useRef(null);
+	const isInView = useInView(headingRef, { once: true });
 
 	const [isFlipped, setIsFlipped] = useState(false);
 	const [hexagons, setHexagons] = useState([
@@ -76,7 +90,7 @@ const Homepage = (props) => {
 
 	return (
 		<div className="Homepage">
-			<div className="HomepageContainer">
+			<div className="HomepageContainer hero-wrapper">
 				<div className="homepage-container">
 					<div className="hero-content">
 						<div className="content-wrapper">
@@ -113,8 +127,12 @@ const Homepage = (props) => {
 							</div>
 						</div>
 					</div>
+
 					<div className="my-image">
-						<img src="/images/photo.jpg" alt="My Image" />
+						<img
+							src="https://pratikmathur-website.s3.us-east-1.amazonaws.com/assets/pratik_mathur.JPG"
+							alt="My P"
+						/>
 					</div>
 				</div>
 
@@ -168,11 +186,24 @@ const Homepage = (props) => {
 			<div className="descriptionContainer">
 				<div className="descriptionWrapper">
 					<div className="descriptionImage">
-						<img alt="Web Dev" src="/images/backgrounds/Web-Dev.jpg" />
+						<LazyLoadImg
+							src={
+								"https://pratikmathur-website.s3.us-east-1.amazonaws.com/assets/AdobeStock_432968278_750x483.png"
+							}
+							alt="Web Development technologies map"
+						/>
 					</div>
 
 					<div className="description">
-						<h1>My passion and focus is web development</h1>
+						<motion.h1
+							ref={headingRef}
+							variants={slideUp}
+							initial="hidden"
+							animate={isInView ? "visible" : "hidden"}
+							transition={{ duration: 0.8 }}
+						>
+							My passion and focus is web development
+						</motion.h1>
 						<p>
 							I'm a passionate software developer driven by turning ideas into
 							reality. I focus on crafting robust web applications and software
@@ -210,13 +241,44 @@ const Homepage = (props) => {
 
 			<div className="flex-container-lg experience-education-wrapper">
 				<div className="experience-wrapper">
-					<h2>Experiences</h2>
-					<div className="wrapper">{experience.map(buildExperiences)}</div>
+					<motion.h1
+						ref={headingRef}
+						variants={slideUp}
+						initial="hidden"
+						animate={isInView ? "visible" : "hidden"}
+						transition={{ duration: 0.8 }}
+					>
+						Experiences
+					</motion.h1>
+
+					<motion.div
+						className="wrapper"
+						variants={slideUp}
+						animate={isInView ? "visible" : "hidden"}
+						transition={{ duration: 0.8 }}
+					>
+						{experience.map(buildExperiences)}
+					</motion.div>
 				</div>
 
 				<div className="experience-wrapper">
-					<h2>Education</h2>
-					<div className="wrapper">{education.map(buildEducation)}</div>
+					<motion.h2
+						ref={headingRef}
+						variants={slideUp}
+						initial="hidden"
+						animate={isInView ? "visible" : "hidden"}
+						transition={{ duration: 0.8 }}
+					>
+						Education
+					</motion.h2>
+					<motion.div
+						className="wrapper"
+						variants={slideUp}
+						animate={isInView ? "visible" : "hidden"}
+						transition={{ duration: 0.8 }}
+					>
+						{education.map(buildEducation)}
+					</motion.div>
 				</div>
 			</div>
 

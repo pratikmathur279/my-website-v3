@@ -16,7 +16,8 @@
 		"production": "npm-run-all production:*",
 		"production:js": "cd client && webpack --config=webpack.prod.js",
 		"production:scss": "cd client && gulp compileAll",
-		"production:deploy": "docker build -f Dockerfile.production -t my-website:production .",
+		"production:build": "docker build -f Dockerfile.production -t my-website:production .",
+		"production:deploy": "docker run -d -p 3010:3010 --name my-website-container my-website:production",
 		"prod:server": "cd server && node index.js"
 	},
 	"author": "Pratik Mathur",
@@ -52,6 +53,7 @@
 		"events": "^3.3.0",
 		"express": "^4.18.0",
 		"express-winston": "^4.2.0",
+		"framer-motion": "^11.15.0",
 		"gulp": "^4.0.2",
 		"gulp-connect": "^5.7.0",
 		"html-react-parser": "^5.1.15",

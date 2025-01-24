@@ -19,7 +19,7 @@ const ResumePage = (props) => {
 					<h3>Dig a little deeper.</h3>
 					<div className="download">
 						<a
-							href="https://pratikmathur-assets.s3.amazonaws.com/PratikMathur_Resume.pdf"
+							href="https://pratikmathur-assets.s3.amazonaws.com/PratikMathur-Resume.pdf"
 							target="_blank"
 							className="button"
 						>

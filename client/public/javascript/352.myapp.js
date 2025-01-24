@@ -257,7 +257,7 @@ var ResumePage = function ResumePage(props) {
   }, /*#__PURE__*/react.createElement("h3", null, "Dig a little deeper."), /*#__PURE__*/react.createElement("div", {
     className: "download"
   }, /*#__PURE__*/react.createElement("a", {
-    href: "https://pratikmathur-assets.s3.amazonaws.com/PratikMathur_Resume.pdf",
+    href: "https://pratikmathur-assets.s3.amazonaws.com/PratikMathur-Resume.pdf",
     target: "_blank",
     className: "button"
   }, /*#__PURE__*/react.createElement("span", null, "Download Resume", " ", /*#__PURE__*/react.createElement(reactIcons/* default */.c, {

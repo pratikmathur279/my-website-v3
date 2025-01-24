@@ -254,7 +254,7 @@ var ProjectsPage = function ProjectsPage(props) {
     className: "hero-container"
   }, /*#__PURE__*/react.createElement("h3", {
     className: "ProjectsHeader"
-  }, "Projects"), /*#__PURE__*/react.createElement("div", {
+  }, "My Projects"), /*#__PURE__*/react.createElement("div", {
     className: "download"
   }, /*#__PURE__*/react.createElement("a", {
     onClick: function onClick() {
