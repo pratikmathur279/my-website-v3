@@ -75,6 +75,7 @@ var ProjectsPage = function ProjectsPage(props) {
     });
   };
   var buildRow = function buildRow(project, index) {
+    if ("active" in project && project.active === false) return null;
     return /*#__PURE__*/react.createElement(projectCard, {
       key: index,
       project: project,

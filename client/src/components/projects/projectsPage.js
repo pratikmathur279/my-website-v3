@@ -23,6 +23,8 @@ const ProjectsPage = (props) => {
 	};
 
 	const buildRow = (project, index) => {
+		if ("active" in project && project.active === false) return null;
+
 		return <ProjectCard key={index} project={project} index={index} />;
 	};
 
