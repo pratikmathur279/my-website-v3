@@ -16,8 +16,8 @@
 		"production": "npm-run-all production:*",
 		"production:js": "cd client && webpack --config=webpack.prod.js",
 		"production:scss": "cd client && gulp compileAll",
-		"production:build": "docker build -f Dockerfile.production -t my-website:production .",
-		"production:deploy": "docker run -d -p 3010:3010 --name my-website-container my-website:production",
+		"production1:build": "docker build -f Dockerfile.production -t my-website:production .",
+		"production1:deploy": "docker run -d -p 3010:3010 --name my-website-container my-website:production",
 		"prod:server": "cd server && node index.js"
 	},
 	"author": "Pratik Mathur",

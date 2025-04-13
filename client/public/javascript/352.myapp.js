@@ -231,11 +231,40 @@ var WorkExperience = function WorkExperience(props) {
     className: "header"
   }, /*#__PURE__*/react.createElement("h2", null, "Work Experience")), /*#__PURE__*/react.createElement("div", {
     className: "content-row"
-  }, props.experience.map(buildExperiences))));
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react.createElement("h3", null, "Software Developer"), /*#__PURE__*/react.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react.createElement("h4", null, "Total Mortgage Services, LLC, ", /*#__PURE__*/react.createElement("span", null, "July 2018 - Present"))), /*#__PURE__*/react.createElement("ul", {
+    "class": "responsibilities"
+  }, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "Embr Marketing Platform:"), " Built and maintained a centralized marketing hub using React.js, PHP Laravel, and SASS, streamlining personalized content distribution and project management."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "User Engagement & Conversions:"), " Developed mortgage calculators, marketing platforms, and pre-qualification apps, improving SEO, increasing traffic, and boosting engagement by 30%."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "SEO & Organic Traffic Growth:"), " Launched a React + NodeJS-based learning center, optimizing for target keywords and backlinks, leading to a", " ", /*#__PURE__*/react.createElement("strong", null, "67% increase in organic traffic"), "."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "Marketing Integrations:"), " Integrated Facebook, Instagram, and LinkedIn APIs to automate and simplify marketing content distribution."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "Security & Authentication:"), " Implemented SAML-based SSO with Auth0 and Azure Directory, improving security and user experience."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "AI-Powered Chatbot:"), " Built a Microsoft Teams & Slack chatbot using Node.js & Express.js, integrated with Salesforce for automated lead qualification using NLP."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("strong", null, "Payment & Data Automation:"), " Integrated Chase Orbital Gateway & Stripe for seamless payments and developed OAuth 2.0-powered applications for automated data sync with Facebook Ads & Blend."))), /*#__PURE__*/react.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react.createElement("h3", null, "Software Developer"), /*#__PURE__*/react.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react.createElement("h4", null, "Inbiz Concepts Inc, ", /*#__PURE__*/react.createElement("span", null, "Feb 2018 - July 2018")), /*#__PURE__*/react.createElement("h4", null, "Client: Findability Sciences")), /*#__PURE__*/react.createElement("ul", {
+    "class": "responsibilities"
+  }, /*#__PURE__*/react.createElement("li", null, "Designed and developed a chatbot UI using AngularJS, integrating IBM Tone Analyzer for sentiment analysis."), /*#__PURE__*/react.createElement("li", null, "Built a Node.js-based real-time inventory management system syncing MySQL & MongoDB data."), /*#__PURE__*/react.createElement("li", null, "Developed RESTful APIs for chatbot interactions and backend data exchange."))), /*#__PURE__*/react.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react.createElement("h3", null, "Software Developer - Intern"), /*#__PURE__*/react.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react.createElement("h4", null, "Astute Business Solutions Pvt. Ltd.,", " ", /*#__PURE__*/react.createElement("span", null, "June 2016 - Aug 2016"))), /*#__PURE__*/react.createElement("ul", {
+    "class": "responsibilities"
+  }, /*#__PURE__*/react.createElement("li", null, "Built an AJAX-driven web app to enhance user experience with JSON-based data exchange."), /*#__PURE__*/react.createElement("li", null, "Designed a responsive UI for Youth4Jobs using Bootstrap 4 and AngularJS."))), /*#__PURE__*/react.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react.createElement("h3", null, "Software Developer - Intern"), /*#__PURE__*/react.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react.createElement("h4", null, "Astute Business Solutions Pvt. Ltd.,", " ", /*#__PURE__*/react.createElement("span", null, "Aug 2014 - Aug 2015"))), /*#__PURE__*/react.createElement("ul", {
+    "class": "responsibilities"
+  }, /*#__PURE__*/react.createElement("li", null, "Developed a MEAN stack web app for Youth4Jobs, migrating legacy data to an ERP platform."), /*#__PURE__*/react.createElement("li", null, "Created a real-time Node.js + Socket.io server for dynamic data exchange with AngularJS & MongoDB."))), /*#__PURE__*/react.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react.createElement("h3", null, "Software Developer - Intern"), /*#__PURE__*/react.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react.createElement("h4", null, "IBM India Pvt. Ltd., ", /*#__PURE__*/react.createElement("span", null, "Jan 2014 - July 2014"))), /*#__PURE__*/react.createElement("ul", {
+    "class": "responsibilities"
+  }, /*#__PURE__*/react.createElement("li", null, "Developed E-Postal Services, an enterprise cloud application using J2EE & Struts MVC."), /*#__PURE__*/react.createElement("li", null, "Built RESTful APIs for XML/JSON data exchange and integrated AJAX for real-time UI updates."))))));
 };
 /* harmony default export */ const workExperience = (WorkExperience);
 ;// CONCATENATED MODULE: ./src/components/resume/resumePage.js
-
 
 
 
@@ -274,8 +303,6 @@ var ResumePage = function ResumePage(props) {
     experience: experience,
     technology: technology
   }), /*#__PURE__*/react.createElement("div", {
-    className: "latest-projects-wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
     className: "Section"
   }, /*#__PURE__*/react.createElement("div", {
     className: "header"
@@ -286,7 +313,7 @@ var ResumePage = function ResumePage(props) {
   }, /*#__PURE__*/react.createElement("h3", null, "Interested to see what I\u2019ve been up to?"), /*#__PURE__*/react.createElement(dist/* Link */.cH, {
     exact: true,
     to: "/projects"
-  }, "View Projects")))))));
+  }, "View Projects"))))));
 };
 /* harmony default export */ const resumePage = (ResumePage);
 

@@ -61,7 +61,7 @@ const Contact = (props) => {
 					props.loProfile.hasOwnProperty("calendly_link") &&
 					props.loProfile.calendly_link && (
 						<div
-							className="btn appblue calendly"
+							className="btn secondary calendly"
 							onClick={() => openCalendlyWidget(props.loProfile.calendly_link)}
 						>
 							Schedule an appointment

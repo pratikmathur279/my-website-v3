@@ -64,7 +64,6 @@ const GlobalReducer = (state = initialState, action) => {
 			});
 
 			t2 = _.flatten(t2);
-			t2 = [...new Set(t2)];
 
 			let new_t2 = [...state.technology, ...t2];
 			state = {

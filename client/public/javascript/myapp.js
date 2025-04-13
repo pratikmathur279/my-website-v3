@@ -28877,7 +28877,7 @@ var ResumePage = /*#__PURE__*/(0,react.lazy)(function () {
   return __webpack_require__.e(/* import() */ 352).then(__webpack_require__.bind(__webpack_require__, 7352));
 });
 var ProjectsPage = /*#__PURE__*/(0,react.lazy)(function () {
-  return __webpack_require__.e(/* import() */ 208).then(__webpack_require__.bind(__webpack_require__, 1208));
+  return Promise.all(/* import() */[__webpack_require__.e(696), __webpack_require__.e(735)]).then(__webpack_require__.bind(__webpack_require__, 6735));
 });
 var ProjectDetails = /*#__PURE__*/(0,react.lazy)(function () {
   return Promise.all(/* import() */[__webpack_require__.e(964), __webpack_require__.e(436)]).then(__webpack_require__.bind(__webpack_require__, 1436));
@@ -32030,7 +32030,6 @@ var GlobalReducer = function GlobalReducer() {
         return t.technologies;
       });
       t2 = lodash.flatten(t2);
-      t2 = _toConsumableArray(new Set(t2));
       var new_t2 = [].concat(_toConsumableArray(state.technology), _toConsumableArray(t2));
       state = _objectSpread(_objectSpread({}, state), {}, {
         technology: _toConsumableArray(new Set(new_t2))

@@ -103,7 +103,7 @@ var ProjectDetails = function ProjectDetails(props) {
     }, /*#__PURE__*/react.createElement("h1", null, project.name), project.page_description && /*#__PURE__*/react.createElement("p", null, project.page_description), project.live_instance && project.live_instance !== "" && /*#__PURE__*/react.createElement("a", {
       href: project.live_instance,
       target: "_blank",
-      className: "btn secondary"
+      className: "btn primary"
     }, "Live Demo")), /*#__PURE__*/react.createElement("div", {
       className: "hero-mouse"
     }, /*#__PURE__*/react.createElement("div", {
@@ -123,7 +123,7 @@ var ProjectDetails = function ProjectDetails(props) {
       photos: project.gallery
     }), project.technologies && /*#__PURE__*/react.createElement("div", {
       className: "technology-wrapper container"
-    }, /*#__PURE__*/react.createElement("h4", null, "Technology Stack:"), /*#__PURE__*/react.createElement("div", {
+    }, /*#__PURE__*/react.createElement("h3", null, "Technology"), /*#__PURE__*/react.createElement("div", {
       className: "wrapper"
     }, project.technologies.map(function (t, i) {
       return /*#__PURE__*/react.createElement("p", {
@@ -131,12 +131,12 @@ var ProjectDetails = function ProjectDetails(props) {
       }, t);
     }))), /*#__PURE__*/react.createElement("div", {
       className: "links-wrapper container"
-    }, /*#__PURE__*/react.createElement("h4", null, "Links:"), /*#__PURE__*/react.createElement("div", {
+    }, /*#__PURE__*/react.createElement("h3", null, "Links"), /*#__PURE__*/react.createElement("div", {
       className: "wrapper"
     }, project.live_instance && project.live_instance !== "" && /*#__PURE__*/react.createElement("a", {
       href: project.live_instance,
       target: "_blank",
-      className: "btn secondary"
+      className: "btn primary"
     }, "Live Demo"), project.github && project.github !== "" && /*#__PURE__*/react.createElement("a", {
       href: project.github,
       target: "_blank",

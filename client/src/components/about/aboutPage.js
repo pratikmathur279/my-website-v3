@@ -60,7 +60,7 @@ const AboutPage = (props) => {
 							to reach out—I’d love to connect!
 						</p>
 
-						<Link to="/contact" className="btn secondary">
+						<Link to="/contact" className="btn primary">
 							Contact Me
 						</Link>
 					</div>

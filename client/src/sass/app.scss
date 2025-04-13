@@ -19,7 +19,7 @@ html {
 
 * {
 	box-sizing: border-box;
-	color: $darkblue;
+	color: $secondaryColor;
 	margin: 0;
 	padding: 0;
 	line-height: normal;
@@ -39,8 +39,8 @@ a {
 	text-decoration: underline;
 
 	&:hover {
-		text-decoration-color: $secondayColor;
-		color: $secondayColor;
+		text-decoration-color: $secondaryColor;
+		color: $secondaryColor;
 	}
 }
 
@@ -65,7 +65,7 @@ a {
 	.mouse {
 		width: 25px;
 		height: 40px;
-		border: 2px solid $darkblue;
+		border: 2px solid $secondaryColor;
 		border-radius: 60px;
 		position: relative;
 		overflow: hidden;
@@ -78,7 +78,7 @@ a {
 			top: 7px;
 			left: 50%;
 			transform: translateX(-50%);
-			background-color: $darkblue;
+			background-color: $secondaryColor;
 			border-radius: 50%;
 			animation: wheel 1.2s infinite;
 		}
@@ -90,7 +90,7 @@ a {
 	margin: auto;
 	width: 100%;
 	position: relative;
-	height: min(750px, 100vh);
+	height: min(650px, 100vh);
 	overflow: none;
 	align-items: center;
 	background: linear-gradient(to right, rgba(245, 245, 245, 0.4), rgba(245, 245, 245, 0.4)), url('/images/common-bg.svg');
@@ -176,7 +176,7 @@ a {
 		h3 {
 			font-size: 4.3em;
 			width: fit-content;
-			color: $darkblue;
+			color: $secondaryColor;
 			text-align: left;
 
 			@media screen and (max-width: $tabletBreak) {
@@ -198,7 +198,7 @@ a {
 
 		h3 {
 			font-size: 2em !important;
-			color: $darkblue;
+			color: $secondaryColor;
 		}
 
 		@media screen and (max-width: $tabletBreak) {
@@ -212,17 +212,20 @@ a {
 	}
 }
 
-.Homepage {
+.homepage-wrapper {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-	position: relative;
+	justify-content: center;
+	align-items: center;
+	gap: 0;
 
 	.flex-container-lg {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
 		width: min(100%, $contentMaxWidth);
-		padding: 3em 1.5em;
+
+		padding: 5em 2em;
 		margin: 0 auto;
 	}
 
@@ -230,7 +233,7 @@ a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100svh;
+		height: max(750px, 100svh);
 
 		.homepage-container {
 			display: block;
@@ -254,7 +257,7 @@ a {
 				:is(h1, h2, h3, h4, h5, h6) {
 					margin: 0;
 					display: block;
-					color: $darkblue;
+					color: $secondaryColor;
 				}
 
 				h1 {
@@ -304,7 +307,7 @@ a {
 
 					p {
 						display: block;
-						color: $darkblue;
+						color: $secondaryColor;
 						font-size: 1em;
 						text-align: left;
 						font-family: 'Poppins Light';
@@ -370,9 +373,9 @@ a {
 		}
 	}
 
-	.descriptionContainer {
+	.description-container {
 		width: 100%;
-		padding: 100px 30px;
+		padding: 5em 2em;
 		background-color: $offwhite;
 
 		@media screen and (max-width: $tabletBreak) {
@@ -382,8 +385,7 @@ a {
 		.descriptionWrapper {
 			display: flex;
 			width: min($contentMaxWidth, 100%);
-			column-gap: 60px;
-			row-gap: 30px;
+			gap: 4em;
 			align-items: flex-start;
 			justify-content: center;
 			margin: 0 auto;
@@ -400,7 +402,7 @@ a {
 
 			.description {
 				flex: 1 0 40%;
-				color: $darkblue;
+				color: $secondaryColor;
 				display: flex;
 				flex-direction: column;
 				gap: 10px;
@@ -462,7 +464,7 @@ a {
 				position: relative;
 				width: 130px;
 				height: 75.06px;
-				background-color: $secondayColor;
+				background-color: $secondaryColor;
 				margin: 50px 50px 0 50px;
 				animation: flipInX 3s;
 
@@ -477,13 +479,13 @@ a {
 
 				&::before {
 					bottom: 100%;
-					border-bottom: 37.53px solid $secondayColor;
+					border-bottom: 37.53px solid $secondaryColor;
 				}
 
 				&::after {
 					top: 100%;
 					width: 0;
-					border-top: 37.53px solid $secondayColor;
+					border-top: 37.53px solid $secondaryColor;
 				}
 
 				.Icons {
@@ -510,7 +512,7 @@ a {
 				margin-top: 40px;
 				padding: 10px 15px 0 15px;
 				width: 200px;
-				color: $darkblue;
+				color: $secondaryColor;
 			}
 
 			p {
@@ -519,7 +521,7 @@ a {
 				font-size: 16px;
 				width: 200px;
 				text-align: center;
-				color: $darkblue;
+				color: $secondaryColor;
 			}
 		}
 
@@ -554,7 +556,7 @@ a {
 
 			.Description {
 				padding: 0;
-				color: $darkblue;
+				color: $secondaryColor;
 
 				p {
 					font-size: 1.15em;
@@ -588,7 +590,7 @@ a {
 					border: 1px hidden #333;
 
 					.Filler {
-						background: $secondayColor;
+						background: $secondaryColor;
 						height: 100%;
 						border-radius: inherit;
 						animation: progressBar 2s ease-in-out;
@@ -647,15 +649,22 @@ a {
 		}
 	}
 
-	.flex-container-lg.experience-education-wrapper {
+	.experience-education-wrapper {
 		display: flex;
-		gap: 30px;
 		justify-content: space-around;
 		flex-wrap: wrap;
+		background-color: $offwhite;
+		width: 100%;
+
+		.flex-container-lg {
+			width: min(100%, $contentMaxWidth);
+			gap: 4em;
+			flex-wrap: wrap;
+		}
 	}
 
 	.experience-wrapper {
-		flex: 0 0 max(45%, 450px);
+		flex: 1 0 550px;
 		max-width: 100%;
 
 		.wrapper {
@@ -683,7 +692,7 @@ a {
 					flex: 0 0 74px;
 					width: 74px;
 					aspect-ratio: 1/1;
-					background-color: $secondayColor;
+					background-color: $primaryColor;
 					border-radius: 50%;
 					display: flex;
 					justify-content: center;
@@ -698,9 +707,17 @@ a {
 
 				.content {
 					flex: 1;
+					display: flex;
+					flex-direction: column;
+					gap: 0.25em;
 
 					h4 {
 						font-family: 'Poppins Bold';
+						font-size: 1.05em;
+					}
+
+					p {
+						font-size: 1em;
 					}
 
 				}
@@ -723,7 +740,7 @@ a {
 	margin: 0 auto;
 	height: fit-content;
 	text-align: center;
-	background-color: $darkblue;
+	background-color: $secondaryColor;
 
 	h1 {
 		font-family: 'Poppins Bold';
@@ -780,7 +797,7 @@ a {
 
 	.FollowInstagram a:hover {
 		background: $lightorange;
-		color: $darkblue;
+		color: $secondaryColor;
 	}
 
 	a:visited,
@@ -814,6 +831,13 @@ a {
 .latest-projects-wrapper,
 .about-page-wrapper {
 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 2em;
+
 	a:visited,
 	a:link,
 	a:hover,
@@ -824,7 +848,7 @@ a {
 	.page-content-wrapper {
 		padding: 45px 60px;
 		display: flex;
-		width: 100%;
+		width: min(100%, $contentMaxWidth);
 		flex-direction: column;
 		gap: 50px;
 
@@ -836,21 +860,23 @@ a {
 	.Section {
 		display: flex;
 		flex-direction: row;
-		gap: 30px;
+		gap: 4em;
 		align-items: flex-start;
+		flex-wrap: wrap;
 
 		@media screen and (max-width: $tabletBreak) {
 			flex-direction: column;
 		}
 
 		.header {
-			flex: 0 0 300px;
+			flex: 0 0 min(300px, 100%);
 
 			h2 {
 				font-size: 2em;
 				font-weight: 100;
 				font-family: 'Poppins Bold';
-				color: $darkblue;
+				color: $secondaryColor;
+				text-transform: capitalize;
 			}
 
 			@media screen and (max-width: $tabletBreak) {
@@ -859,17 +885,17 @@ a {
 		}
 
 		.content-row {
-			flex: 1;
+			flex: 1 0 750px;
 			font-family: 'Poppins Regular';
-			color: $darkblue;
+			color: $secondaryColor;
 			display: flex;
 			flex-direction: column;
-			gap: 20px;
+			gap: 2.5em;
 
 			.content {
 				display: flex;
 				flex-direction: column;
-				gap: 8px;
+				gap: .5em;
 
 				h3 {
 
@@ -891,7 +917,14 @@ a {
 				}
 
 				.responsibilities {
-					padding-left: 15px;
+					padding: 1em 0 1em 1em;
+					display: flex;
+					flex-direction: column;
+					gap: 0.5em;
+				}
+
+				strong {
+					font-family: 'Poppins Bold';
 				}
 
 				span {
@@ -929,7 +962,7 @@ a {
 					padding: 12px 20px;
 					border: 1px solid $lightorange;
 					font-size: 1.1em;
-					color: $darkblue;
+					color: $secondaryColor;
 					font-family: 'Poppins Regular';
 					cursor: pointer;
 
@@ -1021,27 +1054,13 @@ a {
 
 	}
 
-	.container {
-		display: flex;
-		width: 100%;
-		padding: 50px;
-		flex-direction: column;
-		flex-wrap: wrap;
-		gap: 40px;
-
-		@media screen and (max-width: $tabletBreak) {
-			padding: 50px 20px;
-		}
-	}
-
 	.projects-row {
-		display: flex;
-		flex-direction: row;
-		width: 100%;
-
-		justify-content: space-around;
-		flex-wrap: wrap;
-		gap: 50px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+		gap: 3em;
+		width: min(100%, $contentMaxWidth);
+		margin: 0 auto;
+		padding: 5em 2em;
 
 		a {
 			text-decoration: none;
@@ -1052,142 +1071,79 @@ a {
 			}
 		}
 
-		.project-preview {
+		.project-card {
+			width: 100%;
 			display: flex;
 			flex-direction: column;
-			cursor: pointer;
-			position: relative;
-			width: 100%;
-			max-width: 400px;
-			max-height: 425px;
-			gap: 10px;
+			gap: 2em;
+			align-items: center;
+			justify-content: flex-start;
+			flex-wrap: wrap;
 
-			.project-name {
-				color: $darkblue;
-				font-size: 1.1em;
-			}
+			border-radius: 2em;
+			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+			padding: 1.5em;
 
 			.preview-box {
-				max-width: 100%;
-				height: 100%;
-				max-height: calc(100% - 60px);
+				width: min(90%, 325px);
+				aspect-ratio: 16/10;
+
 				display: flex;
-				align-items: flex-start;
+				align-items: center;
 				justify-content: center;
-				aspect-ratio: 16/9;
+				overflow: hidden;
 
 				img {
-					width: auto;
-					height: auto;
-					max-width: 100%;
-					max-height: 100%;
-					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
 				}
 			}
 
-			@media screen and (max-width: $tabletBreak) {
+			.card-content {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
 				width: 100%;
-				max-width: 100%;
-			}
-		}
 
-		.project-selector {
-			flex: 0 0 100%;
-			border: 1px solid #e0e0e0;
-			padding: 20px;
-
-			.project-name {
-				color: $darkblue;
-				font-size: 1.2em;
-				margin-bottom: 8px;
-			}
-
-			.project-description {
-				color: $darkblue;
-				font-size: 1em;
-				margin-bottom: 8px;
-			}
-
-			.project-preview {
-				margin: 20px 0;
-				width: 100%;
-				max-width: 750px;
-				display: block;
-				max-height: fit-content;
-
-				img {
-					max-width: 100%;
-					max-height: 500px;
-				}
-			}
-
-			.technology-wrapper {
-				margin: 30px 0;
-
-				.wrapper {
-					display: flex;
-					gap: 10px;
+				h3 {
+					font-size: clamp(1.1em, 3vw, 1.25em);
 				}
 
 				p {
-
-					background-color: $offwhite;
-					padding: 8px;
-					border-radius: 8px;
+					font-size: 1em;
 				}
-			}
 
-			.links-wrapper {
-				margin: 30px 0;
-				display: flex;
-				flex-direction: column;
-				gap: 25px;
-
-				.wrapper {
+				.technology-wrapper {
 					display: flex;
-					justify-content: space-between;
-					width: 100%;
 					flex-wrap: wrap;
-					align-items: center;
+					gap: 0.5em;
 
 					p {
-						font-size: 1.1em;
-
-						span {
-							display: block;
-							font-size: 0.8em;
-						}
+						padding: 0.35em 0.95em;
+						background-color: $offwhite;
+						border-radius: 1em;
 					}
+				}
 
-					button {
-						background-color: $lightgrey;
-						padding: 8px 20px;
-						width: fit-content;
-						border: none;
-						border-radius: 15px;
-					}
+				.link-button {
+					display: flex;
+					align-items: center;
+					gap: 0.5em;
+					color: $secondaryColor;
+					text-decoration: none;
 				}
 			}
 		}
 
-		@media screen and (max-width: $tabletBreak) {
-			gap: 20px;
 
-			.project {}
-		}
-
-		@media screen and (max-width: $mobileLargeBreak) {
-			.project {
-				// --project-max-size: 100%;
-			}
-		}
 	}
 
 	.ProjectInformation {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		color: $darkblue;
+		color: $secondaryColor;
 		max-height: 100%;
 		overflow-y: auto;
 		padding: 0px;
@@ -1232,12 +1188,12 @@ a {
 				font-size: 1.25em;
 				font-weight: 100;
 				font-family: 'Poppins Light';
-				color: $darkblue;
+				color: $secondaryColor;
 			}
 
 			h2 {
 				font-size: 2.2em;
-				color: $darkblue;
+				color: $secondaryColor;
 				font-family: 'Poppins Regular';
 			}
 
@@ -1252,7 +1208,7 @@ a {
 			h3 {
 				font-size: 1.25em;
 				font-family: 'Poppins Light';
-				color: $darkblue;
+				color: $secondaryColor;
 			}
 
 			.Form {
@@ -1288,7 +1244,7 @@ a {
 					width: 100%;
 					padding: 8px 15px;
 					font-size: 1.05em;
-					border: 1px solid $darkblue;
+					border: 1px solid $secondaryColor;
 					font-family: 'Source Sans Pro';
 					resize: none;
 				}
@@ -1401,13 +1357,13 @@ a {
 				}
 
 				h3 {
-					color: $darkblue;
+					color: $secondaryColor;
 					text-decoration: none;
 				}
 
 				p {
 					font-weight: 100;
-					color: $darkblue;
+					color: $secondaryColor;
 					text-decoration: none;
 				}
 
@@ -1516,15 +1472,14 @@ a {
 		display: flex;
 		width: min(100%, 950px);
 		margin: 0 auto;
-		padding: 20px;
 		height: 100%;
 		position: relative;
-		padding: 0;
+		padding: 2em;
 		top: auto;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 15px;
+		gap: 1em;
 
 		* {
 			text-align: center;
@@ -1542,32 +1497,34 @@ a {
 	.project-details-container {
 		width: min(100%, $contentMaxWidth);
 		margin: 0 auto;
-		padding: 60px 30px;
+		padding: 5em 2em;
 
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
+		gap: 3em;
 
 		figure {
-			width: 100%;
+			width: min(750px, 100%);
+			aspect-ratio: 16/9;
+			overflow: hidden;
 			margin: 0 auto;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
 			img {
-				max-width: min(100%, 750px);
-				max-height: 450px;
-				height: auto;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
 			}
 		}
 
 		.content {
-			width: min(100%, 1250px);
+			width: 100%;
 			margin: 0 auto;
 			display: flex;
 			flex-direction: column;
-			gap: 30px;
+			gap: 3em;
 
 			.container {
 				display: flex;
@@ -1575,12 +1532,12 @@ a {
 				gap: 15px;
 
 				h3 {
-					color: $darkblue;
+					color: $secondaryColor;
 					font-size: 1.65em;
 				}
 
 				h4 {
-					color: $darkblue;
+					color: $secondaryColor;
 					font-size: 1.25em;
 				}
 
@@ -1609,12 +1566,10 @@ a {
 					align-items: center;
 
 					p {
-						padding: 0.65rem 0.95rem;
-						font-size: 1rem;
-						background: rgba(153, 153, 153, 0.2);
-						border-radius: 5px;
-						font-weight: 600;
-						color: $darkblue;
+						padding: 0.65em 1.25em;
+						background-color: $offwhite;
+						border-radius: 1em;
+						font-size: 1em;
 					}
 				}
 			}
@@ -1636,11 +1591,12 @@ a {
 .property-gallery-wrapper {
 
 	h3 {
-		color: $darkblue;
+		color: $secondaryColor;
 	}
 
 	#gallery {
-		width: 100%;
+		width: min(100%, 950px);
+		margin: 0 auto;
 	}
 }
 
@@ -1667,11 +1623,11 @@ a {
 			gap: 10px;
 
 			* {
-				color: $darkblue;
+				color: $secondaryColor;
 			}
 
 			.index {
-				color: $appblue;
+				color: $secondaryColor;
 			}
 
 		}

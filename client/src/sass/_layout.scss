@@ -39,7 +39,6 @@
 
     .wrapper {
         width: 100%;
-        max-width: 1660px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -49,24 +48,16 @@
         .logo-wrapper {
             display: flex;
             align-items: center;
+            justify-content: center;
+            flex: 0 0 fit-content;
+            cursor: pointer;
             height: 100%;
 
-            .my-logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                max-width: 100px;
+            img {
+                max-width: 100%;
                 max-height: 100%;
-                height: 100%;
-
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                }
+                cursor: pointer;
             }
-
-            .btn {}
         }
 
         .contact-us {
@@ -79,11 +70,11 @@
                 svg {
                     width: 26px;
                     height: 26px;
-                    // color: $darkblue;
+                    // color: $secondaryColor;
                 }
 
                 span {
-                    // color: $darkblue;
+                    // color: $secondaryColor;
                     font-size: 1.45em;
                 }
             }
@@ -111,7 +102,7 @@
 
                 width: 100%;
                 text-align: center;
-                color: $darkblue;
+                color: $secondaryColor;
                 text-decoration: none;
                 width: 100%;
                 font-size: 1.2em;
@@ -163,7 +154,7 @@
         position: relative;
         width: 40px;
         height: 3px;
-        background: $darkblue;
+        background: $secondaryColor;
         transform-origin: center;
 
         &::before,
@@ -190,7 +181,7 @@
 
             &::before,
             &::after {
-                background-color: $secondayColor;
+                background-color: $secondaryColor;
                 top: 0;
                 transition-duration: 0.15s;
             }
@@ -229,7 +220,7 @@
 }
 
 .Footer {
-    background-color: $darkblue;
+    background-color: $secondaryColor;
     position: relative;
     padding: 35px 0;
     text-align: center;
@@ -371,7 +362,7 @@
                     margin: 0 auto;
                     width: 100%;
                     text-align: center;
-                    color: $darkblue;
+                    color: $secondaryColor;
                     text-decoration: none;
                     width: 100%;
                     font-size: 1.25em;

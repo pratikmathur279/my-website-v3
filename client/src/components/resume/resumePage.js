@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import ReactIcons from "../common/reactIcons";
-import { getExperience, getTechnology } from "../../actions/website";
 import WorkExperience from "./workExperience";
 
 const ResumePage = (props) => {
@@ -39,19 +38,17 @@ const ResumePage = (props) => {
 			<div className="page-content-wrapper">
 				<WorkExperience experience={experience} technology={technology} />
 
-				<div className="latest-projects-wrapper">
-					<div className="Section">
-						<div className="header">
-							<h2>Latest Work</h2>
-						</div>
+				<div className="Section">
+					<div className="header">
+						<h2>Latest Work</h2>
+					</div>
 
-						<div className="content-row">
-							<div className="latest-projects">
-								<h3>Interested to see what I’ve been up to?</h3>
-								<Link exact to="/projects">
-									View Projects
-								</Link>
-							</div>
+					<div className="content-row">
+						<div className="latest-projects">
+							<h3>Interested to see what I’ve been up to?</h3>
+							<Link exact to="/projects">
+								View Projects
+							</Link>
 						</div>
 					</div>
 				</div>

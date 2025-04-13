@@ -30,34 +30,6 @@ const Homepage = (props) => {
 	const headingRef = useRef(null);
 	const isInView = useInView(headingRef, { once: true });
 
-	const [isFlipped, setIsFlipped] = useState(false);
-	const [hexagons, setHexagons] = useState([
-		{
-			id: 0,
-			name: "IoIosSpeedometer",
-			title: "Fast",
-			desc: "Fast load times and lag free interaction",
-		},
-		{
-			id: 1,
-			name: "FaLaptop",
-			title: "Responsive",
-			desc: "My layouts will work on any device.",
-		},
-		{
-			id: 2,
-			name: "AiOutlineBulb",
-			title: "Intuitive",
-			desc: "Strong preference for easy to use, intuitive UX/UI.",
-		},
-		{
-			id: 3,
-			name: "FaRocket",
-			title: "Dynamic",
-			desc: "I love making dynamic websites",
-		},
-	]);
-
 	const buildExperiences = (exp) => {
 		const fromYear = new Date(exp.from).getFullYear();
 		return (
@@ -89,7 +61,7 @@ const Homepage = (props) => {
 	};
 
 	return (
-		<div className="Homepage">
+		<div className="homepage-wrapper">
 			<div className="HomepageContainer hero-wrapper">
 				<div className="homepage-container">
 					<div className="hero-content">
@@ -183,7 +155,7 @@ const Homepage = (props) => {
 				</div>
 			</div>
 
-			<div className="descriptionContainer">
+			<div className="flex-container-lg description-container">
 				<div className="descriptionWrapper">
 					<div className="descriptionImage">
 						<LazyLoadImg
@@ -195,15 +167,7 @@ const Homepage = (props) => {
 					</div>
 
 					<div className="description">
-						<motion.h1
-							ref={headingRef}
-							variants={slideUp}
-							initial="hidden"
-							animate={isInView ? "visible" : "hidden"}
-							transition={{ duration: 0.8 }}
-						>
-							My passion and focus is web development
-						</motion.h1>
+						<h1>My passion and focus is web development</h1>
 						<p>
 							I'm a passionate software developer driven by turning ideas into
 							reality. I focus on crafting robust web applications and software
@@ -237,80 +201,50 @@ const Homepage = (props) => {
 
 			<MyExpertise />
 
-			{/* <Hexagons hexagons={hexagons} /> */}
+			<div className="experience-education-wrapper">
+				<div className="flex-container-lg">
+					<div className="experience-wrapper">
+						<motion.h1
+							ref={headingRef}
+							variants={slideUp}
+							initial="hidden"
+							animate={isInView ? "visible" : "hidden"}
+							transition={{ duration: 0.8 }}
+						>
+							Experiences
+						</motion.h1>
 
-			<div className="flex-container-lg experience-education-wrapper">
-				<div className="experience-wrapper">
-					<motion.h1
-						ref={headingRef}
-						variants={slideUp}
-						initial="hidden"
-						animate={isInView ? "visible" : "hidden"}
-						transition={{ duration: 0.8 }}
-					>
-						Experiences
-					</motion.h1>
+						<motion.div
+							className="wrapper"
+							variants={slideUp}
+							animate={isInView ? "visible" : "hidden"}
+							transition={{ duration: 0.8 }}
+						>
+							{experience.map(buildExperiences)}
+						</motion.div>
+					</div>
 
-					<motion.div
-						className="wrapper"
-						variants={slideUp}
-						animate={isInView ? "visible" : "hidden"}
-						transition={{ duration: 0.8 }}
-					>
-						{experience.map(buildExperiences)}
-					</motion.div>
-				</div>
-
-				<div className="experience-wrapper">
-					<motion.h2
-						ref={headingRef}
-						variants={slideUp}
-						initial="hidden"
-						animate={isInView ? "visible" : "hidden"}
-						transition={{ duration: 0.8 }}
-					>
-						Education
-					</motion.h2>
-					<motion.div
-						className="wrapper"
-						variants={slideUp}
-						animate={isInView ? "visible" : "hidden"}
-						transition={{ duration: 0.8 }}
-					>
-						{education.map(buildEducation)}
-					</motion.div>
-				</div>
-			</div>
-
-			{/* <div className="intro-skills-wrapper">
-				<div className="IntroContainer">
-					<div className="Description">
-						<p>
-							A passionate software developer with 6+ years of experience
-							building innovative digital products. I've thrived in remote
-							environments collaborating with talented individuals on projects
-							for both businesses and consumers. Throughout my career, I've
-							embraced diverse opportunities, encountering both successes and
-							challenges. This has fueled my drive to continuously expand my
-							knowledge and refine my software development skillset. Even after
-							years in the field, my enthusiasm for crafting solutions through
-							code remains as strong as ever.
-						</p>
-						<br />
-						<p>
-							After years in the industry, and having gone through multiple
-							opportunities, some good, and some bad, I am in the process of
-							widening my range of knowledge and improving my skillset in
-							Software Development. So, here I am years later still doing the
-							same thing, and still loving it.
-						</p>
+					<div className="experience-wrapper">
+						<motion.h2
+							ref={headingRef}
+							variants={slideUp}
+							initial="hidden"
+							animate={isInView ? "visible" : "hidden"}
+							transition={{ duration: 0.8 }}
+						>
+							Education
+						</motion.h2>
+						<motion.div
+							className="wrapper"
+							variants={slideUp}
+							animate={isInView ? "visible" : "hidden"}
+							transition={{ duration: 0.8 }}
+						>
+							{education.map(buildEducation)}
+						</motion.div>
 					</div>
 				</div>
-
-				<div className="SkillsContainer">
-					<SkillsBar skills={skills} />
-				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

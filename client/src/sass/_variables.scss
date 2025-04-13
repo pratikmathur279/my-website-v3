@@ -1,11 +1,4 @@
-:root {
-    --tab-nav-items: 3;
-    --tab-nav-slider-thickness: 4px;
-    --tab-nav-slider-color: #083953;
-    --tab-nav-transition-timing: 0.25s;
-    --tab-nav-current-item: 1;
-    --content-max-width: 850px;
-}
+:root {}
 
 // FONTS
 @font-face {
@@ -109,7 +102,7 @@
 }
 
 
-$contentMaxWidth: 1660px;
+$contentMaxWidth: 1440px;
 
 // media queries
 $tabletBreak: 947px;
@@ -117,10 +110,11 @@ $mobileLargeBreak: 767px;
 $mobileMediumBreak: 514px;
 $mobileSmallBreak: 350px;
 
-$appblue: #0060a9;
-$appgreen: #5bb65d;
-$darkblue: #282A39;
-$secondayColor: #e98266;
+$primaryColor: #e98266;
+$secondaryColor: #282A39;
+
+$lightblue: #f3f8fb;
+$offwhite: #f8f8f8;
 
 
 $success: #2bb579;
@@ -129,7 +123,7 @@ $warning: #f0ad4e;
 $neutral: gray;
 $normal: #418aca;
 
-$lightblue: #f3f8fb;
+
 
 $black: #090A11;
 $grey: #393B44;
@@ -139,12 +133,7 @@ $lightgrey: #CCC4C2;
 $darkorange: #B44C31;
 $lightorange: #D78D6C;
 $lightnavy: #333647;
-$offwhite: #f8f8f8;
 
-//pulse loading
-$progression1: #e6e6e6;
-$progression2: #d5d5d5;
-$progression3: #b7b7b7;
 
 @mixin arrow-down($size, $color) {
     width: 0;

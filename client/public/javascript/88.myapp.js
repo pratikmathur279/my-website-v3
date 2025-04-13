@@ -120,8 +120,6 @@ __webpack_require__.d(__webpack_exports__, {
   "default": () => (/* binding */ homepage)
 });
 
-// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__(4799);
 // EXTERNAL MODULE: ../node_modules/react/index.js
 var react = __webpack_require__(6952);
 // EXTERNAL MODULE: ../node_modules/react-redux/es/index.js + 13 modules
@@ -193,6 +191,8 @@ var SkillsBar = function SkillsBar(props) {
 /* harmony default export */ const skillsBar = ((/* unused pure expression or super */ null && (SkillsBar)));
 // EXTERNAL MODULE: ../node_modules/react-router-dom/dist/index.js
 var dist = __webpack_require__(2112);
+// EXTERNAL MODULE: ../node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__(4799);
 ;// CONCATENATED MODULE: ./src/components/myExpertise/my-expertise.js
 
 
@@ -266,7 +266,6 @@ var LazyLoadImg = function LazyLoadImg(props) {
 
 
 
-
 var Homepage = function Homepage(props) {
   var dispatch = (0,es/* useDispatch */.OY)();
   var _useSelector = (0,es/* useSelector */.w1)(function (state) {
@@ -293,34 +292,6 @@ var Homepage = function Homepage(props) {
   var isInView = (0,use_in_view/* useInView */.c)(headingRef, {
     once: true
   });
-  var _useState = (0,react.useState)(false),
-    _useState2 = (0,slicedToArray/* default */.c)(_useState, 2),
-    isFlipped = _useState2[0],
-    setIsFlipped = _useState2[1];
-  var _useState3 = (0,react.useState)([{
-      id: 0,
-      name: "IoIosSpeedometer",
-      title: "Fast",
-      desc: "Fast load times and lag free interaction"
-    }, {
-      id: 1,
-      name: "FaLaptop",
-      title: "Responsive",
-      desc: "My layouts will work on any device."
-    }, {
-      id: 2,
-      name: "AiOutlineBulb",
-      title: "Intuitive",
-      desc: "Strong preference for easy to use, intuitive UX/UI."
-    }, {
-      id: 3,
-      name: "FaRocket",
-      title: "Dynamic",
-      desc: "I love making dynamic websites"
-    }]),
-    _useState4 = (0,slicedToArray/* default */.c)(_useState3, 2),
-    hexagons = _useState4[0],
-    setHexagons = _useState4[1];
   var buildExperiences = function buildExperiences(exp) {
     var fromYear = new Date(exp.from).getFullYear();
     return /*#__PURE__*/react.createElement("div", {
@@ -344,7 +315,7 @@ var Homepage = function Homepage(props) {
     }, /*#__PURE__*/react.createElement("h4", null, edu.institution), /*#__PURE__*/react.createElement("p", null, edu.course)));
   };
   return /*#__PURE__*/react.createElement("div", {
-    className: "Homepage"
+    className: "homepage-wrapper"
   }, /*#__PURE__*/react.createElement("div", {
     className: "HomepageContainer hero-wrapper"
   }, /*#__PURE__*/react.createElement("div", {
@@ -410,7 +381,7 @@ var Homepage = function Homepage(props) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "mouse"
   }))), /*#__PURE__*/react.createElement("div", {
-    className: "descriptionContainer"
+    className: "flex-container-lg description-container"
   }, /*#__PURE__*/react.createElement("div", {
     className: "descriptionWrapper"
   }, /*#__PURE__*/react.createElement("div", {
@@ -420,18 +391,12 @@ var Homepage = function Homepage(props) {
     alt: "Web Development technologies map"
   })), /*#__PURE__*/react.createElement("div", {
     className: "description"
-  }, /*#__PURE__*/react.createElement(proxy/* motion */.q.h1, {
-    ref: headingRef,
-    variants: slideUp,
-    initial: "hidden",
-    animate: isInView ? "visible" : "hidden",
-    transition: {
-      duration: 0.8
-    }
-  }, "My passion and focus is web development"), /*#__PURE__*/react.createElement("p", null, "I'm a passionate software developer driven by turning ideas into reality. I focus on crafting robust web applications and software that prioritizes a fantastic user experience. In my work, I take great pride in:"), /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Bringing ideas to life:"), " I love collaborating and transforming concepts into user-friendly applications."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Building robust applications:"), " I strive to create reliable and secure software that can stand the test of time."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Exceptional user experience (UX):"), " At the heart of everything I do is a focus on making applications intuitive and enjoyable to use.")), /*#__PURE__*/react.createElement("p", null, "Want to learn more about how I can help you achieve your development goals?", " ", /*#__PURE__*/react.createElement(dist/* Link */.cH, {
+  }, /*#__PURE__*/react.createElement("h1", null, "My passion and focus is web development"), /*#__PURE__*/react.createElement("p", null, "I'm a passionate software developer driven by turning ideas into reality. I focus on crafting robust web applications and software that prioritizes a fantastic user experience. In my work, I take great pride in:"), /*#__PURE__*/react.createElement("ul", null, /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Bringing ideas to life:"), " I love collaborating and transforming concepts into user-friendly applications."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Building robust applications:"), " I strive to create reliable and secure software that can stand the test of time."), /*#__PURE__*/react.createElement("li", null, /*#__PURE__*/react.createElement("b", null, "Exceptional user experience (UX):"), " At the heart of everything I do is a focus on making applications intuitive and enjoyable to use.")), /*#__PURE__*/react.createElement("p", null, "Want to learn more about how I can help you achieve your development goals?", " ", /*#__PURE__*/react.createElement(dist/* Link */.cH, {
     to: "/contact"
   }, "Don't hesitate to reach out!"))))), /*#__PURE__*/react.createElement(my_expertise, null), /*#__PURE__*/react.createElement("div", {
-    className: "flex-container-lg experience-education-wrapper"
+    className: "experience-education-wrapper"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "flex-container-lg"
   }, /*#__PURE__*/react.createElement("div", {
     className: "experience-wrapper"
   }, /*#__PURE__*/react.createElement(proxy/* motion */.q.h1, {
@@ -466,7 +431,7 @@ var Homepage = function Homepage(props) {
     transition: {
       duration: 0.8
     }
-  }, education.map(buildEducation)))));
+  }, education.map(buildEducation))))));
 };
 /* harmony default export */ const homepage = (Homepage);
 

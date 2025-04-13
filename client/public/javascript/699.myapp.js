@@ -166,15 +166,13 @@ var Header = function Header(props) {
     className: "header-wrapper " + navScrolled
   }, /*#__PURE__*/react.createElement("div", {
     className: "wrapper"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "logo-wrapper"
   }, /*#__PURE__*/react.createElement(dist/* Link */.cH, {
     to: "/",
-    className: "my-logo"
+    className: "logo-wrapper"
   }, /*#__PURE__*/react.createElement("img", {
     alt: "Pratik Mathur Logo",
     src: "/images/logos/pm_logo.png"
-  }))), /*#__PURE__*/react.createElement("nav", {
+  })), /*#__PURE__*/react.createElement("nav", {
     className: "DesktopOnly"
   }, /*#__PURE__*/react.createElement(navigationItems, null)), showSideDrawer && /*#__PURE__*/react.createElement(sidebar, {
     closed: sideDrawerToggleHandler

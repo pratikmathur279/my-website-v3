@@ -33,7 +33,7 @@ const ProjectDetails = (props) => {
 							<a
 								href={project.live_instance}
 								target="_blank"
-								className="btn secondary"
+								className="btn primary"
 							>
 								Live Demo
 							</a>
@@ -65,7 +65,7 @@ const ProjectDetails = (props) => {
 
 						{project.technologies && (
 							<div className="technology-wrapper container">
-								<h4>Technology Stack:</h4>
+								<h3>Technology</h3>
 								<div className="wrapper">
 									{project.technologies.map((t, i) => (
 										<p key={i}>{t}</p>
@@ -75,13 +75,13 @@ const ProjectDetails = (props) => {
 						)}
 
 						<div className="links-wrapper container">
-							<h4>Links:</h4>
+							<h3>Links</h3>
 							<div className="wrapper">
 								{project.live_instance && project.live_instance !== "" && (
 									<a
 										href={project.live_instance}
 										target="_blank"
-										className="btn secondary"
+										className="btn primary"
 									>
 										Live Demo
 									</a>

@@ -30,11 +30,9 @@ const Header = (props) => {
 	return (
 		<div className={"header-wrapper " + navScrolled}>
 			<div className="wrapper">
-				<div className="logo-wrapper">
-					<Link to="/" className="my-logo">
-						<img alt="Pratik Mathur Logo" src="/images/logos/pm_logo.png" />
-					</Link>
-				</div>
+				<Link to="/" className="logo-wrapper">
+					<img alt="Pratik Mathur Logo" src="/images/logos/pm_logo.png" />
+				</Link>
 
 				<nav className="DesktopOnly">
 					<NavigationItems />
