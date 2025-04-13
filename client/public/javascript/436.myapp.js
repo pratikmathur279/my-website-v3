@@ -111,7 +111,7 @@ var ProjectDetails = function ProjectDetails(props) {
     }))), /*#__PURE__*/react.createElement("div", {
       className: "project-details-container"
     }, /*#__PURE__*/react.createElement("figure", null, /*#__PURE__*/react.createElement("img", {
-      src: "https://pratikmathur-website.s3.amazonaws.com/projects/".concat(project.file_name),
+      src: project.project_filename,
       alt: project.name
     })), /*#__PURE__*/react.createElement("div", {
       className: "content"

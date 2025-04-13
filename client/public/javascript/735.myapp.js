@@ -34,7 +34,7 @@ var ProjectCard = function ProjectCard(props) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "preview-box"
   }, /*#__PURE__*/react.createElement("img", {
-    src: "https://pratikmathur-website.s3.amazonaws.com/projects/" + props.project.file_name,
+    src: props.project.project_filename,
     alt: props.project.name
   })), /*#__PURE__*/react.createElement("div", {
     className: "card-content"

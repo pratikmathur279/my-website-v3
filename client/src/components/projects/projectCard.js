@@ -13,13 +13,7 @@ const ProjectCard = (props) => {
 			key={props.key}
 		>
 			<div className="preview-box">
-				<img
-					src={
-						"https://pratikmathur-website.s3.amazonaws.com/projects/" +
-						props.project.file_name
-					}
-					alt={props.project.name}
-				/>
+				<img src={props.project.project_filename} alt={props.project.name} />
 			</div>
 
 			<div className="card-content">

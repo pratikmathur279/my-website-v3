@@ -47,10 +47,7 @@ const ProjectDetails = (props) => {
 
 				<div className="project-details-container">
 					<figure>
-						<img
-							src={`https://pratikmathur-website.s3.amazonaws.com/projects/${project.file_name}`}
-							alt={project.name}
-						/>
+						<img src={project.project_filename} alt={project.name} />
 					</figure>
 
 					<div className="content">
