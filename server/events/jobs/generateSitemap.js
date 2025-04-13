@@ -2,6 +2,8 @@ import puppeteer from "puppeteer";
 import fs from "fs";
 
 export async function generateSitemap() {
+	const ignoreUrls = ["hello@pratikmathur.com"];
+
 	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
 
@@ -27,21 +29,25 @@ export async function generateSitemap() {
 			console.log(`Scraping ${currentUrl}`);
 
 			// Extract all URLs on the current page
-			const urlsOnPage = await page.evaluate(() => {
+			const urlsOnPage = await page.evaluate((ignoreUrls) => {
 				const anchorElements = document.querySelectorAll("a");
 				const links = [];
 
 				anchorElements.forEach((anchor) => {
 					const href = anchor.href;
 					// Ensure the link is within the same domain
-					if (href && href.includes("pratikmathur.com")) {
+					if (
+						href &&
+						href.includes("pratikmathur.com") &&
+						href.includes("https://")
+					) {
 						const url = new URL(href);
 						links.push(url.origin + url.pathname);
 					}
 				});
 
 				return links;
-			});
+			}, ignoreUrls);
 
 			// Add new URLs to the queue for further processing
 			for (const url of urlsOnPage) {

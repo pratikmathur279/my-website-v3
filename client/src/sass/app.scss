@@ -102,10 +102,11 @@ a {
 	-ms-animation: fadein 1s;
 	-o-animation: fadein 1s;
 
+	display: flex;
+	align-items: center;
+
 	/* Opera */
 	.hero-container {
-		position: absolute;
-		top: 25%;
 		padding-left: 8em;
 		font-weight: 100;
 		display: flex;
