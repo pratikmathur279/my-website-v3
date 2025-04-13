@@ -40,7 +40,7 @@ var ProjectCard = function ProjectCard(props) {
     className: "card-content"
   }, /*#__PURE__*/react.createElement("h3", {
     className: "project-name"
-  }, props.project.title), /*#__PURE__*/react.createElement("p", null, props.project.page_description), (props === null || props === void 0 || (_props$project = props.project) === null || _props$project === void 0 ? void 0 : _props$project.technologies) && /*#__PURE__*/react.createElement("div", {
+  }, props.project.name), /*#__PURE__*/react.createElement("p", null, props.project.page_description), (props === null || props === void 0 || (_props$project = props.project) === null || _props$project === void 0 ? void 0 : _props$project.technologies) && /*#__PURE__*/react.createElement("div", {
     className: "technology-wrapper"
   }, props.project.technologies.map(function (t, i) {
     return /*#__PURE__*/react.createElement("p", {

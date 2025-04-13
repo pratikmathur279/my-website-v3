@@ -26,7 +26,9 @@ const ProjectDetails = (props) => {
 			<div className="project-details-wrapper">
 				<div className="hero-wrapper">
 					<div className="hero-container">
-						<h1>{project.name}</h1>
+						<h1>{project.title}</h1>
+						{project.subtitle && <h4>{project.subtitle}</h4>}
+
 						{project.page_description && <p>{project.page_description}</p>}
 
 						{project.live_instance && project.live_instance !== "" && (

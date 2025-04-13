@@ -17,7 +17,7 @@ const ProjectCard = (props) => {
 			</div>
 
 			<div className="card-content">
-				<h3 className="project-name">{props.project.title}</h3>
+				<h3 className="project-name">{props.project.name}</h3>
 
 				<p>{props.project.page_description}</p>
 

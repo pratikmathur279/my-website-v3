@@ -100,7 +100,7 @@ var ProjectDetails = function ProjectDetails(props) {
       className: "hero-wrapper"
     }, /*#__PURE__*/react.createElement("div", {
       className: "hero-container"
-    }, /*#__PURE__*/react.createElement("h1", null, project.name), project.page_description && /*#__PURE__*/react.createElement("p", null, project.page_description), project.live_instance && project.live_instance !== "" && /*#__PURE__*/react.createElement("a", {
+    }, /*#__PURE__*/react.createElement("h1", null, project.title), project.subtitle && /*#__PURE__*/react.createElement("h4", null, project.subtitle), project.page_description && /*#__PURE__*/react.createElement("p", null, project.page_description), project.live_instance && project.live_instance !== "" && /*#__PURE__*/react.createElement("a", {
       href: project.live_instance,
       target: "_blank",
       className: "btn primary"
